@@ -10,9 +10,7 @@ require('dotenv').config({ path: __dirname + '/.env' });
 
 // Al principio de server.js
 // Configure CORS - with fallback for missing env var
-const allowedOrigins = process.env.ALLOWED_ORIGINS 
-  ? process.env.ALLOWED_ORIGINS.split(',') 
-  : ['http://localhost:3000', 'https://cuentacuentosfront.onrender.com'];
+
 
 
 
@@ -32,22 +30,24 @@ app.use(helmet({
 // Parse JSON bodies
 app.use(express.json({ limit: '1mb' }));
 
-
+const allowedOrigins = process.env.ALLOWED_ORIGINS 
+  ? process.env.ALLOWED_ORIGINS.split(',') 
+  : ['http://localhost:3000', 'https://cuentacuentosfront.onrender.com'];
 
 app.use(cors({
-  origin: function(origin, callback) {
+  origin: function (origin, callback) {
     // Allow requests with no origin (like mobile apps, curl, etc.)
     if (!origin) return callback(null, true);
-    
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+
+    if (allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      console.log(`Origin ${origin} not allowed by CORS`);
-      callback(null, false);
+      console.error(`CORS error: Origin ${origin} not allowed`);
+      callback(new Error('Not allowed by CORS'));
     }
   },
   methods: ['GET', 'POST', 'OPTIONS'],
-  credentials: true
+  credentials: true,
 }));
 
 // Rate limiting
