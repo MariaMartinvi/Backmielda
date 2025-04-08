@@ -11,13 +11,14 @@ require('dotenv').config({ path: __dirname + '/.env' });
 // Al principio de server.js
 // Configure CORS - with fallback for missing env var
 
-app.options('*', cors()); // Handle preflight requests for all routes
+
 
 
 console.log("Google TTS API Key configurada:", !!process.env.GOOGLE_TTS_API_KEY);
 // Create Express app - THIS WAS MISSING
 const app = express();
 
+app.options('*', cors()); // Handle preflight requests for all routes
 console.log("OpenAI API Key configurada:", !!process.env.OPENAI_API_KEY);
 console.log("Google TTS API Key configurada:", !!process.env.GOOGLE_TTS_API_KEY);
 
