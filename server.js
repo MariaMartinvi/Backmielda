@@ -26,7 +26,7 @@ app.use(express.json({ limit: '1mb' }));
 // CORS configuration - unified in one place
 const allowedOrigins = process.env.ALLOWED_ORIGINS 
   ? process.env.ALLOWED_ORIGINS.split(',').map(origin => origin.trim())
-  : ['http://localhost:3000', 'https://cuentacuentosfront.onrender.com'];
+  : ['http://localhost:3000', 'https://cuentacuentosfront.onrender.com', 'https://www.micuentacuentos.com'];
 
 console.log("Allowed origins:", allowedOrigins);
 
