@@ -11,7 +11,7 @@ require('dotenv').config({ path: __dirname + '/.env' });
 // Al principio de server.js
 // Configure CORS - with fallback for missing env var
 
-
+app.options('*', cors()); // Handle preflight requests for all routes
 
 
 console.log("Google TTS API Key configurada:", !!process.env.GOOGLE_TTS_API_KEY);
@@ -27,7 +27,7 @@ app.use(helmet({
   contentSecurityPolicy: process.env.NODE_ENV === 'production' ? undefined : false
 }));
 
-app.options('*', cors()); // Handle preflight requests for all routes
+
 
 // Parse JSON bodies
 app.use(express.json({ limit: '1mb' }));
@@ -38,9 +38,7 @@ const allowedOrigins = process.env.ALLOWED_ORIGINS
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps, curl, etc.)
-    if (!origin) return callback(null, true);
-
+    if (!origin) return callback(null, true); // Allow requests with no origin (e.g., mobile apps)
     if (allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
