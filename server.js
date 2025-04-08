@@ -10,10 +10,9 @@ require('dotenv').config({ path: __dirname + '/.env' });
 
 // Al principio de server.js
 
-
-
-// Al principio de server.js
-
+const allowedOrigins = process.env.ALLOWED_ORIGINS 
+  ? process.env.ALLOWED_ORIGINS.split(',') 
+  : ['http://localhost:3000', 'https://cuentacuentosfront.onrender.com'];
 
 
 console.log("Google TTS API Key configurada:", !!process.env.GOOGLE_TTS_API_KEY);
