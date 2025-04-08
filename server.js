@@ -9,10 +9,11 @@ const dotenv = require('dotenv');
 require('dotenv').config({ path: __dirname + '/.env' });
 
 // Al principio de server.js
-
+// Configure CORS - with fallback for missing env var
 const allowedOrigins = process.env.ALLOWED_ORIGINS 
   ? process.env.ALLOWED_ORIGINS.split(',') 
   : ['http://localhost:3000', 'https://cuentacuentosfront.onrender.com'];
+
 
 
 console.log("Google TTS API Key configurada:", !!process.env.GOOGLE_TTS_API_KEY);
@@ -31,10 +32,7 @@ app.use(helmet({
 // Parse JSON bodies
 app.use(express.json({ limit: '1mb' }));
 
-// Configure CORS - with fallback for missing env var
-const allowedOrigins = process.env.ALLOWED_ORIGINS 
-  ? process.env.ALLOWED_ORIGINS.split(',') 
-  : ['http://localhost:3000', 'https://cuentacuentos-il9p.onrender.com'];
+
 
 app.use(cors({
   origin: function(origin, callback) {
