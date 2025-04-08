@@ -27,6 +27,8 @@ app.use(helmet({
   contentSecurityPolicy: process.env.NODE_ENV === 'production' ? undefined : false
 }));
 
+app.options('*', cors()); // Handle preflight requests for all routes
+
 // Parse JSON bodies
 app.use(express.json({ limit: '1mb' }));
 
@@ -46,8 +48,9 @@ app.use(cors({
       callback(new Error('Not allowed by CORS'));
     }
   },
-  methods: ['GET', 'POST', 'OPTIONS'],
-  credentials: true,
+  methods: ['GET', 'POST', 'OPTIONS'], // Allow these HTTP methods
+  credentials: true, // Allow cookies and credentials
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
 }));
 
 // Rate limiting
