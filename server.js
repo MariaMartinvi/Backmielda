@@ -3,22 +3,14 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('rate-limiter-flexible');
-const dotenv = require('dotenv');
 
-// Load environment variables
+// Load environment variables once
 require('dotenv').config({ path: __dirname + '/.env' });
 
-// Al principio de server.js
-// Configure CORS - with fallback for missing env var
-
-
-
-
-console.log("Google TTS API Key configurada:", !!process.env.GOOGLE_TTS_API_KEY);
-// Create Express app - THIS WAS MISSING
+// Create Express app
 const app = express();
 
-app.options('*', cors()); // Handle preflight requests for all routes
+// Log API key configurations
 console.log("OpenAI API Key configurada:", !!process.env.OPENAI_API_KEY);
 console.log("Google TTS API Key configurada:", !!process.env.GOOGLE_TTS_API_KEY);
 
@@ -28,28 +20,31 @@ app.use(helmet({
   contentSecurityPolicy: process.env.NODE_ENV === 'production' ? undefined : false
 }));
 
-
-
 // Parse JSON bodies
 app.use(express.json({ limit: '1mb' }));
 
+// CORS configuration - unified in one place
 const allowedOrigins = process.env.ALLOWED_ORIGINS 
-  ? process.env.ALLOWED_ORIGINS.split(',') 
+  ? process.env.ALLOWED_ORIGINS.split(',').map(origin => origin.trim())
   : ['http://localhost:3000', 'https://cuentacuentosfront.onrender.com'];
+
+console.log("Allowed origins:", allowedOrigins);
 
 app.use(cors({
   origin: function (origin, callback) {
-    if (!origin) return callback(null, true); // Allow requests with no origin (e.g., mobile apps)
-    if (allowedOrigins.includes(origin)) {
+    // For requests with no origin (like mobile apps, curl, etc)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
-      console.error(`CORS error: Origin ${origin} not allowed`);
+      console.error(`CORS error: Origin ${origin} not allowed. Allowed origins: ${allowedOrigins.join(', ')}`);
       callback(new Error('Not allowed by CORS'));
     }
   },
-  methods: ['GET', 'POST', 'OPTIONS'], // Allow these HTTP methods
-  credentials: true, // Allow cookies and credentials
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
+  methods: ['GET', 'POST', 'OPTIONS'],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 // Rate limiting
@@ -66,9 +61,6 @@ app.use(async (req, res, next) => {
     res.status(429).json({ error: 'Too many requests. Please try again later.' });
   }
 });
-
-// Handle OPTIONS requests
-app.options('*', cors());
 
 // Simple health check route
 app.get('/api/health', (req, res) => {
