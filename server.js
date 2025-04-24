@@ -7,6 +7,9 @@ const rateLimit = require('rate-limiter-flexible');
 // Load environment variables once
 require('dotenv').config({ path: __dirname + '/.env' });
 
+// Set environment to development
+process.env.NODE_ENV = 'development';
+
 // Create Express app
 const app = express();
 
@@ -26,26 +29,21 @@ app.use(express.json({ limit: '1mb' }));
 // CORS configuration - unified in one place
 const allowedOrigins = process.env.ALLOWED_ORIGINS 
   ? process.env.ALLOWED_ORIGINS.split(',').map(origin => origin.trim())
-  : ['http://localhost:3000', 'https://cuentacuentosfront.onrender.com', 'https://www.micuentacuentos.com'];
+  : ['http://localhost:3000', 'http://localhost:5001', 'https://cuentacuentosfront.onrender.com', 'https://www.micuentacuentos.com'];
 
 console.log("Allowed origins:", allowedOrigins);
 
+// CORS middleware
 app.use(cors({
-  origin: function (origin, callback) {
-    // For requests with no origin (like mobile apps, curl, etc)
-    if (!origin) return callback(null, true);
-    
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      console.error(`CORS error: Origin ${origin} not allowed. Allowed origins: ${allowedOrigins.join(', ')}`);
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: true, // Allow all origins in development
   methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization'],
+  exposedHeaders: ['Content-Type', 'Authorization']
 }));
+
+// Handle preflight requests
+app.options('*', cors());
 
 // Rate limiting
 const apiLimiter = new rateLimit.RateLimiterMemory({
