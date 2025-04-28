@@ -81,9 +81,6 @@ app.use(limiter);
 app.use('/api/stories', storyRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/stripe', stripeRoutes);
-app.use('/api/stories', storyRoutes);
-app.use('/api/auth', authRoutes);
-app.use('/api/stripe', stripeRoutes);
 app.use('/api/audio', audioRoutes);
 
 // Health check route
