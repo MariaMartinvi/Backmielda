@@ -47,7 +47,8 @@ const allowedOrigins = [
   'http://localhost:5000',
   'http://localhost:5001',
   'https://cuentacuentosfront.onrender.com',
-  'https://www.micuentacuentos.com'
+  'https://www.micuentacuentos.com',
+  'https://micuentacuentosfront.onrender.com'
 ];
 
 app.use(cors({
@@ -78,10 +79,15 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // Routes
+console.log('Registering routes...');
 app.use('/api/stories', storyRoutes);
+console.log('Story routes registered');
 app.use('/api/auth', authRoutes);
+console.log('Auth routes registered');
 app.use('/api/stripe', stripeRoutes);
+console.log('Stripe routes registered');
 app.use('/api/audio', audioRoutes);
+console.log('Audio routes registered');
 
 // Health check route
 app.get('/api/health', (req, res) => {
