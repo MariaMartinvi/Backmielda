@@ -14,7 +14,20 @@ require('dotenv').config({ path: __dirname + '/.env' });
 
 // Create Express app
 const app = express();
-
+// Log all registered routes
+app._router.stack.forEach(middleware => {
+  if (middleware.route) {
+    console.log(`Route: ${Object.keys(middleware.route.methods)} ${middleware.route.path}`);
+  } else if (middleware.name === 'router') {
+    middleware.handle.stack.forEach(handler => {
+      if (handler.route) {
+        const path = handler.route.path;
+        const method = Object.keys(handler.route.methods)[0].toUpperCase();
+        console.log(`Route: ${method} ${path}`);
+      }
+    });
+  }
+});
 // Middleware
 app.use((req, res, next) => {
   if (req.originalUrl === '/api/stripe/webhook') {
