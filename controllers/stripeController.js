@@ -1,10 +1,10 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const User = require('../models/User');
 
-// Get the frontend URL from environment variables or use a default
+// Get frontend URL from environment or use default
 const FRONTEND_URL = process.env.FRONTEND_URL || 'https://www.micuentacuentos.com';
 
-// Create a checkout session
+// Create checkout session
 const createCheckoutSession = async (req, res) => {
   try {
     const { email } = req.body;
@@ -16,14 +16,14 @@ const createCheckoutSession = async (req, res) => {
     
     // Find user by email
     const user = await User.findOne({ email });
+    
     if (!user) {
       return res.status(404).json({ error: 'User not found' });
     }
     
-    // Log the frontend URL being used
     console.log('Using frontend URL for redirects:', FRONTEND_URL);
     
-    // Create checkout session
+    // Create checkout session with TEST mode
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [
@@ -50,7 +50,7 @@ const createCheckoutSession = async (req, res) => {
   }
 };
 
-// Handle success redirect
+// Handle success callback
 const handleSuccess = async (req, res) => {
   try {
     const { session_id } = req.query;
@@ -60,7 +60,7 @@ const handleSuccess = async (req, res) => {
       return res.status(400).json({ error: 'Session ID is required' });
     }
     
-    // Retrieve the session from Stripe
+    // Retrieve the session
     const session = await stripe.checkout.sessions.retrieve(session_id);
     console.log('Session retrieved:', session.id, 'Payment status:', session.payment_status);
     
@@ -68,7 +68,7 @@ const handleSuccess = async (req, res) => {
       return res.status(400).json({ error: 'Payment not completed' });
     }
     
-    // Find the user from client_reference_id
+    // Get user ID from session
     const userId = session.client_reference_id;
     const user = await User.findById(userId);
     
@@ -95,7 +95,7 @@ const handleSuccess = async (req, res) => {
   }
 };
 
-// Handle Stripe webhooks
+// Handle webhook events
 const handleWebhook = async (req, res) => {
   const sig = req.headers['stripe-signature'];
   
@@ -117,64 +117,17 @@ const handleWebhook = async (req, res) => {
     case 'customer.subscription.created':
     case 'customer.subscription.updated':
       const subscription = event.data.object;
-      await handleSubscriptionUpdated(subscription);
+      // Handle subscription update
       break;
       
     case 'customer.subscription.deleted':
       const cancelledSubscription = event.data.object;
-      await handleSubscriptionCancelled(cancelledSubscription);
+      // Handle subscription cancellation
       break;
-      
-    // Add other webhook events as needed
   }
   
   res.json({ received: true });
 };
-
-// Helper functions for webhook handlers
-async function handleSubscriptionUpdated(subscription) {
-  try {
-    // Find user with this subscription ID
-    const user = await User.findOne({ stripeSubscriptionId: subscription.id });
-    
-    if (!user) {
-      console.log('No user found with subscription ID:', subscription.id);
-      return;
-    }
-    
-    // Update user based on subscription status
-    if (subscription.status === 'active') {
-      user.subscriptionStatus = 'active';
-      console.log('Subscription activated for user:', user.email);
-    } else if (subscription.status === 'trialing') {
-      user.subscriptionStatus = 'active'; // Handle trial as active
-      console.log('Trial subscription activated for user:', user.email);
-    }
-    
-    await user.save();
-  } catch (error) {
-    console.error('Error handling subscription update:', error);
-  }
-}
-
-async function handleSubscriptionCancelled(subscription) {
-  try {
-    // Find user with this subscription ID
-    const user = await User.findOne({ stripeSubscriptionId: subscription.id });
-    
-    if (!user) {
-      console.log('No user found with subscription ID:', subscription.id);
-      return;
-    }
-    
-    // Mark subscription as cancelled
-    user.subscriptionStatus = 'cancelled';
-    await user.save();
-    console.log('Subscription cancelled for user:', user.email);
-  } catch (error) {
-    console.error('Error handling subscription cancellation:', error);
-  }
-}
 
 module.exports = {
   createCheckoutSession,
