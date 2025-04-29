@@ -11,36 +11,10 @@ const audioRoutes = require('./routes/audioRoutes');
 
 // Load environment variables once
 require('dotenv').config({ path: __dirname + '/.env' });
-// Log all registered routes
-app._router.stack.forEach(middleware => {
-  if (middleware.route) {
-    console.log(`Route: ${Object.keys(middleware.route.methods)} ${middleware.route.path}`);
-  } else if (middleware.name === 'router') {
-    middleware.handle.stack.forEach(handler => {
-      if (handler.route) {
-        const path = handler.route.path;
-        const method = Object.keys(handler.route.methods)[0].toUpperCase();
-        console.log(`Route: ${method} ${path}`);
-      }
-    });
-  }
-});
-// Create Express app
+
+// Create Express app - THIS MUST COME BEFORE TRYING TO ACCESS app._router!
 const app = express();
-// Log all registered routes
-app._router.stack.forEach(middleware => {
-  if (middleware.route) {
-    console.log(`Route: ${Object.keys(middleware.route.methods)} ${middleware.route.path}`);
-  } else if (middleware.name === 'router') {
-    middleware.handle.stack.forEach(handler => {
-      if (handler.route) {
-        const path = handler.route.path;
-        const method = Object.keys(handler.route.methods)[0].toUpperCase();
-        console.log(`Route: ${method} ${path}`);
-      }
-    });
-  }
-});
+
 // Middleware
 app.use((req, res, next) => {
   if (req.originalUrl === '/api/stripe/webhook') {
@@ -77,11 +51,14 @@ const allowedOrigins = [
   'https://micuentacuentosfront.onrender.com'
 ];
 
+console.log('Allowed origins:', allowedOrigins);
+
 app.use(cors({
   origin: function(origin, callback) {
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
+      console.log('CORS blocked origin:', origin);
       callback(new Error('Not allowed by CORS'));
     }
   },
@@ -104,6 +81,11 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
+// Test route that will help confirm the server is working
+app.get('/test', (req, res) => {
+  res.status(200).json({ message: 'Server is running!' });
+});
+
 // Routes
 console.log('Registering routes...');
 app.use('/api/stories', storyRoutes);
@@ -122,13 +104,55 @@ app.get('/api/health', (req, res) => {
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Something went wrong!' });
+  console.error('SERVER ERROR:', err.stack);
+  res.status(500).json({ error: 'Something went wrong!', message: err.message });
+});
+
+// Log routes after they're all registered
+console.log('All routes registered. Listing routes:');
+// List registered routes AFTER they've been added
+const listRoutes = () => {
+  const routes = [];
+  
+  app._router.stack.forEach((middleware) => {
+    if (middleware.route) {
+      // Routes registered directly on the app
+      routes.push({
+        path: middleware.route.path,
+        methods: Object.keys(middleware.route.methods)
+      });
+    } else if (middleware.name === 'router') {
+      // Router middleware
+      middleware.handle.stack.forEach((handler) => {
+        if (handler.route) {
+          const basePath = middleware.regexp.toString().split('?')[1].slice(0, -3);
+          routes.push({
+            path: basePath + handler.route.path,
+            methods: Object.keys(handler.route.methods)
+          });
+        }
+      });
+    }
+  });
+  
+  return routes;
+};
+
+console.log('Routes:', JSON.stringify(listRoutes(), null, 2));
+
+// Catch-all route for debugging
+app.use('*', (req, res) => {
+  res.status(404).json({ 
+    error: 'Not Found', 
+    message: `Route ${req.originalUrl} not found`,
+    method: req.method
+  });
 });
 
 // Start server
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 10000; // Make sure this matches what's in your Render config
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
+  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`API URL: http://localhost:${PORT}/api`);
 });
