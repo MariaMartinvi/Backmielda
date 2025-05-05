@@ -149,6 +149,10 @@ const login = async (req, res) => {
   }
 };
 
+const logout = async (req, res) => {
+  // Implementation of logout
+};
+
 const refreshToken = async (req, res) => {
   try {
     const { email } = req.body;
@@ -223,9 +227,68 @@ const getCurrentUser = async (req, res) => {
   }
 };
 
+const loginWithGoogle = async (req, res) => {
+  try {
+    const { email, googleId } = req.body;
+
+    if (!email || !googleId) {
+      return res.status(400).json({ 
+        error: 'Validation error',
+        details: 'Email and Google ID are required'
+      });
+    }
+
+    // Find or create user
+    let user = await User.findOne({ email });
+    if (!user) {
+      user = await User.create({
+        email,
+        googleId,
+        isVerified: true // Google accounts are pre-verified
+      });
+    } else if (!user.googleId) {
+      // Link existing account with Google
+      user.googleId = googleId;
+      user.isVerified = true;
+      await user.save();
+    }
+
+    // Generate JWT token
+    const token = jwt.sign(
+      { 
+        id: user._id,
+        email: user.email,
+        isPremium: user.isPremium,
+        subscriptionStatus: user.subscriptionStatus
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: process.env.JWT_EXPIRES_IN || '24h' }
+    );
+
+    res.json({
+      token,
+      user: {
+        id: user._id,
+        email: user.email,
+        storiesGenerated: user.storiesGenerated,
+        subscriptionStatus: user.subscriptionStatus,
+        isPremium: user.subscriptionStatus === 'active'
+      }
+    });
+  } catch (error) {
+    console.error('Google login error:', error);
+    res.status(500).json({ 
+      error: 'Server error',
+      details: error.message
+    });
+  }
+};
+
 module.exports = {
   register,
   login,
+  logout,
   refreshToken,
-  getCurrentUser
+  getCurrentUser,
+  loginWithGoogle
 }; 
