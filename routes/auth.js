@@ -10,6 +10,13 @@ router.get('/test', (req, res) => {
 
 // Ruta para iniciar el proceso de autenticación con Google
 router.get('/google',
+  (req, res, next) => {
+    const redirectUri = req.query.redirect_uri;
+    if (redirectUri) {
+      req.session.redirectUri = redirectUri;
+    }
+    next();
+  },
   passport.authenticate('google', { 
     scope: ['profile', 'email'],
     prompt: 'select_account'
@@ -36,17 +43,20 @@ router.get('/google/callback',
         { expiresIn: '24h' }
       );
 
-      // Redirigir al frontend con el token
-      const frontendUrl = process.env.NODE_ENV === 'production'
+      // Usar la URL de redirección guardada en la sesión o la URL por defecto
+      const frontendUrl = req.session.redirectUri || (process.env.NODE_ENV === 'production'
         ? 'https://micuentacuentos.com'
-        : process.env.FRONTEND_URL || 'http://localhost:3000';
+        : process.env.FRONTEND_URL || 'http://localhost:3000');
+      
+      // Limpiar la URL de redirección de la sesión
+      delete req.session.redirectUri;
       
       res.redirect(`${frontendUrl}/auth/google/callback?token=${token}`);
     } catch (error) {
       console.error('Error in Google callback:', error);
-      const frontendUrl = process.env.NODE_ENV === 'production'
+      const frontendUrl = req.session.redirectUri || (process.env.NODE_ENV === 'production'
         ? 'https://micuentacuentos.com'
-        : process.env.FRONTEND_URL || 'http://localhost:3000';
+        : process.env.FRONTEND_URL || 'http://localhost:3000');
       res.redirect(`${frontendUrl}/login?error=auth_failed`);
     }
   }

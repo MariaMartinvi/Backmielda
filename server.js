@@ -2,6 +2,7 @@
 const path = require('path');
 const fs = require('fs');
 const dotenv = require('dotenv');
+const MongoStore = require('connect-mongo');
 
 // Load environment variables
 const envPath = path.resolve(__dirname, '.env');
@@ -60,7 +61,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(session({
   secret: process.env.SESSION_SECRET || 'your-secret-key',
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGODB_URI,
+    ttl: 24 * 60 * 60 // 1 day
+  }),
+  cookie: {
+    secure: process.env.NODE_ENV === 'production',
+    httpOnly: true,
+    maxAge: 24 * 60 * 60 * 1000, // 1 day
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
+  }
 }));
 
 // Inicializar Passport
