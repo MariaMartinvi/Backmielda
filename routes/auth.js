@@ -32,11 +32,16 @@ router.get('/google/callback',
       );
 
       // Redirigir al frontend con el token
-      const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+      const frontendUrl = process.env.NODE_ENV === 'production'
+        ? 'https://micuentacuentos.com'
+        : process.env.FRONTEND_URL || 'http://localhost:3000';
       res.redirect(`${frontendUrl}/auth/google/callback?token=${token}`);
     } catch (error) {
       console.error('Error in Google callback:', error);
-      res.redirect(`${process.env.FRONTEND_URL}/login?error=auth_failed`);
+      const frontendUrl = process.env.NODE_ENV === 'production'
+        ? 'https://micuentacuentos.com'
+        : process.env.FRONTEND_URL || 'http://localhost:3000';
+      res.redirect(`${frontendUrl}/login?error=auth_failed`);
     }
   }
 );
