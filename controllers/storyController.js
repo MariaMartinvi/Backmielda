@@ -33,8 +33,12 @@ exports.generateStory = async (req, res, next) => {
       return res.status(403).json({ 
         error: 'Story limit reached',
         message: user.subscriptionStatus === 'active' 
-          ? 'You have reached your monthly story generation limit of 30 stories.'
-          : 'You have reached your free story limit. Please subscribe to generate more stories.',
+          ? (storyParams.language === 'es' 
+            ? 'Has alcanzado tu límite mensual de 30 historias.'
+            : 'You have reached your monthly story generation limit of 30 stories.')
+          : (storyParams.language === 'es'
+            ? 'Has alcanzado tu límite de historias gratuitas. Por favor, suscríbete para generar más historias.'
+            : 'You have reached your free story limit. Please subscribe to generate more stories.'),
         subscriptionRequired: user.subscriptionStatus !== 'active',
         storiesRemaining: await getStoriesRemaining(user)
       });
