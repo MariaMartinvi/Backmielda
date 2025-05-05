@@ -88,9 +88,8 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5000',
   'http://localhost:5001',
-  'https://cuentacuentosfront.onrender.com',
   'https://www.micuentacuentos.com',
-  'https://micuentacuentosfront.onrender.com'
+  'https://micuentacuentos.com'
 ];
 
 console.log('Allowed origins:', allowedOrigins);
