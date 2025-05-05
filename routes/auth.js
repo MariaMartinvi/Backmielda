@@ -9,14 +9,19 @@ router.get('/test', (req, res) => {
 });
 
 // Ruta para iniciar el proceso de autenticación con Google
-router.get('/google', (req, res) => {
-  console.log('Google route hit');
-  passport.authenticate('google', { scope: ['profile', 'email'] })(req, res);
-});
+router.get('/google',
+  passport.authenticate('google', { 
+    scope: ['profile', 'email'],
+    prompt: 'select_account'
+  })
+);
 
 // Ruta de callback después de la autenticación con Google
 router.get('/google/callback',
-  passport.authenticate('google', { failureRedirect: '/login' }),
+  passport.authenticate('google', { 
+    failureRedirect: '/login',
+    failureMessage: true
+  }),
   (req, res) => {
     try {
       // Generar token JWT
@@ -35,6 +40,7 @@ router.get('/google/callback',
       const frontendUrl = process.env.NODE_ENV === 'production'
         ? 'https://micuentacuentos.com'
         : process.env.FRONTEND_URL || 'http://localhost:3000';
+      
       res.redirect(`${frontendUrl}/auth/google/callback?token=${token}`);
     } catch (error) {
       console.error('Error in Google callback:', error);
@@ -45,5 +51,31 @@ router.get('/google/callback',
     }
   }
 );
+
+// Ruta para obtener el usuario actual
+router.get('/current-user', (req, res) => {
+  if (req.user) {
+    res.json({
+      id: req.user._id,
+      name: req.user.name,
+      email: req.user.email,
+      avatar: req.user.avatar,
+      isPremium: req.user.isPremium,
+      subscriptionStatus: req.user.subscriptionStatus
+    });
+  } else {
+    res.status(401).json({ message: 'Not authenticated' });
+  }
+});
+
+// Ruta para cerrar sesión
+router.get('/logout', (req, res) => {
+  req.logout((err) => {
+    if (err) {
+      return res.status(500).json({ error: 'Error during logout' });
+    }
+    res.redirect('/');
+  });
+});
 
 module.exports = router; 
