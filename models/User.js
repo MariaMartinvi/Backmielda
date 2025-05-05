@@ -69,7 +69,7 @@ userSchema.methods.canGenerateStory = function() {
   if (this.subscriptionStatus === 'active') {
     return true;
   }
-  return this.storiesGenerated < 2;
+  return this.storiesGenerated < 3;
 };
 
 module.exports = mongoose.model('User', userSchema); 

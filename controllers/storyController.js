@@ -126,9 +126,9 @@ async function checkStoryGenerationLimit(user) {
   // Check and reset monthly count if needed
   user.checkAndResetMonthlyCount();
 
-  // Free users get 2 stories total
+  // Free users get 3 stories total
   if (user.subscriptionStatus === 'free') {
-    return user.storiesGenerated < 2;
+    return user.storiesGenerated < 3;
   }
 
   // Subscribed users get 30 stories per month
@@ -137,13 +137,13 @@ async function checkStoryGenerationLimit(user) {
     if (user.subscriptionEndDate && user.subscriptionEndDate < new Date()) {
       user.subscriptionStatus = 'cancelled';
       await user.save();
-      return user.storiesGenerated < 2; // Fall back to free tier
+      return user.storiesGenerated < 3; // Fall back to free tier
     }
     return user.monthlyStoriesGenerated < 30; // 30 stories per month limit
   }
 
   // Cancelled subscriptions fall back to free tier
-  return user.storiesGenerated < 2;
+  return user.storiesGenerated < 3;
 }
 
 async function getStoriesRemaining(user) {
@@ -151,17 +151,17 @@ async function getStoriesRemaining(user) {
   user.checkAndResetMonthlyCount();
 
   if (user.subscriptionStatus === 'free') {
-    return Math.max(0, 2 - user.storiesGenerated);
+    return Math.max(0, 3 - user.storiesGenerated);
   }
   
   if (user.subscriptionStatus === 'active') {
     if (user.subscriptionEndDate && user.subscriptionEndDate < new Date()) {
-      return Math.max(0, 2 - user.storiesGenerated);
+      return Math.max(0, 3 - user.storiesGenerated);
     }
     return Math.max(0, 30 - user.monthlyStoriesGenerated);
   }
 
-  return Math.max(0, 2 - user.storiesGenerated);
+  return Math.max(0, 3 - user.storiesGenerated);
 }
 
 exports.getStoryById = async (req, res, next) => {
