@@ -2,9 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
+const session = require('express-session');
+const passport = require('./config/passport');
 require('dotenv').config();
 
 const authRoutes = require('./routes/authRoutes');
+const googleAuthRoutes = require('./routes/auth');
 const stripeRoutes = require('./routes/stripeRoutes');
 const storyRoutes = require('./routes/storyRoutes');
 const subscriptionRoutes = require('./routes/subscriptionRoutes');
@@ -19,8 +22,28 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
+// Configuración de sesión
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'your-secret-key',
+  resave: false,
+  saveUninitialized: false
+}));
+
+// Inicializar Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Debug middleware para ver las rutas registradas
+app.use((req, res, next) => {
+  console.log('Request URL:', req.url);
+  next();
+});
+
 // Routes
-app.use('/api/auth', authRoutes);
+app.use('/api/auth', googleAuthRoutes); // Rutas de Google primero
+app.use('/api/auth', authRoutes);       // Otras rutas de autenticación después
+
+// Resto de rutas
 app.use('/api/stripe', stripeRoutes);
 app.use('/api/stories', storyRoutes);
 app.use('/api/subscription', subscriptionRoutes);

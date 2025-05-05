@@ -34,8 +34,11 @@ const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const mongoose = require('mongoose');
+const session = require('express-session');
+const passport = require('./config/passport');
 const storyRoutes = require('./routes/storyRoutes');
 const authRoutes = require('./routes/authRoutes');
+const googleAuthRoutes = require('./routes/auth');
 const stripeRoutes = require('./routes/stripeRoutes');
 const audioRoutes = require('./routes/audioRoutes');
 const subscriptionRoutes = require('./routes/subscriptionRoutes');
@@ -52,6 +55,17 @@ app.use((req, res, next) => {
   }
 });
 app.use(express.urlencoded({ extended: true }));
+
+// Configuración de sesión
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'your-secret-key',
+  resave: false,
+  saveUninitialized: false
+}));
+
+// Inicializar Passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
@@ -120,6 +134,8 @@ app.use('/api/stories', storyRoutes);
 console.log('Story routes registered');
 app.use('/api/auth', authRoutes);
 console.log('Auth routes registered');
+app.use('/api/auth', googleAuthRoutes);
+console.log('Google auth routes registered');
 app.use('/api/stripe', stripeRoutes);
 console.log('Stripe routes registered');
 app.use('/api/audio', audioRoutes);

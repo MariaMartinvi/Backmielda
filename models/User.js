@@ -10,6 +10,16 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: false
   },
+  googleId: {
+    type: String,
+    required: false,
+    unique: true,
+    sparse: true
+  },
+  isVerified: {
+    type: Boolean,
+    default: false
+  },
   storiesGenerated: {
     type: Number,
     default: 0

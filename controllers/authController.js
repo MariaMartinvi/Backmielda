@@ -40,7 +40,12 @@ const register = async (req, res) => {
 
     // Generate JWT token
     const token = jwt.sign(
-      { userId: user._id },
+      { 
+        id: user._id,
+        email: user.email,
+        isPremium: user.isPremium,
+        subscriptionStatus: user.subscriptionStatus
+      },
       process.env.JWT_SECRET,
       { expiresIn: process.env.JWT_EXPIRES_IN || '24h' }
     );
@@ -104,7 +109,12 @@ const login = async (req, res) => {
     // Generate JWT token
     console.log('Generating JWT token for user:', email);
     const token = jwt.sign(
-      { userId: user._id },
+      { 
+        id: user._id,
+        email: user.email,
+        isPremium: user.isPremium,
+        subscriptionStatus: user.subscriptionStatus
+      },
       process.env.JWT_SECRET,
       { expiresIn: process.env.JWT_EXPIRES_IN || '24h' }
     );
@@ -154,7 +164,12 @@ const refreshToken = async (req, res) => {
 
     // Generate new token
     const token = jwt.sign(
-      { userId: user._id },
+      { 
+        id: user._id,
+        email: user.email,
+        isPremium: user.isPremium,
+        subscriptionStatus: user.subscriptionStatus
+      },
       process.env.JWT_SECRET,
       { expiresIn: process.env.JWT_EXPIRES_IN || '24h' }
     );

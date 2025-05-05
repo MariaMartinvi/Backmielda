@@ -22,9 +22,9 @@ const auth = async (req, res, next) => {
 
     console.log('Verifying token with JWT_SECRET');
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log('Token decoded successfully, user ID:', decoded.userId);
+    console.log('Token decoded successfully, user ID:', decoded.id);
 
-    const user = await User.findById(decoded.userId);
+    const user = await User.findById(decoded.id);
     console.log('User found:', user ? user.email : 'No user found');
 
     if (!user) {
