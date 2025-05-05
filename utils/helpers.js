@@ -184,14 +184,22 @@ Ejemplo de nivel avanzado:
     }
     
     if (language === 'en') {
-      return `Write a ${lengthDescription} ${storyType} story about "${topic}". 
+      return `Create a story with the following structure:
+
+[Write a creative, engaging, and short title here. Do not include any labels or asterisks.]
+
+Write a ${lengthDescription} ${storyType} story about "${topic}". 
 The story should be appropriate for ${ageDescription}.${namesInstruction}${englishLevelInstruction}
 Use an engaging narrative style, with interesting characters and a coherent plot development.
 Include dialogues and descriptions where appropriate.
 The story should have a clear beginning, development, and conclusion.
 IMPORTANT: The story must be exactly ${length === 'short' ? '100' : length === 'medium' ? '300' : '600'} words.`;
     } else {
-      return `Escribe una historia ${lengthDescription} de género ${storyType} sobre "${topic}". 
+      return `Crea una historia con la siguiente estructura:
+
+[Escribe un título creativo, atractivo y corto aquí. No incluyas etiquetas ni asteriscos.]
+
+Escribe una historia ${lengthDescription} de género ${storyType} sobre "${topic}". 
 La historia debe ser apropiada para ${ageDescription}.${namesInstruction}${englishLevelInstruction}
 Usa un estilo narrativo atractivo, con personajes interesantes y un desarrollo coherente de la trama.
 Incluye diálogos y descripciones donde sea apropiado.
@@ -200,16 +208,26 @@ IMPORTANTE: La historia debe tener exactamente ${length === 'corto' ? '100' : le
     }
   };
   
-  exports.extractTitle = (content, fallbackTopic) => {
-    // Try to extract title from the first line if it looks like a title
+  exports.extractTitle = (content, fallbackTopic, language = 'es') => {
+    // Try to find the title in the first line
     const lines = content.split('\n');
     const firstLine = lines[0].trim();
     
-    // If first line is short enough and doesn't end with punctuation, use as title
-    if (firstLine.length < 60 && !firstLine.match(/[.,:;?!]$/)) {
-      return firstLine;
+    // Remove any asterisks and "Título:" or "Title:" prefix
+    const cleanTitle = firstLine
+      .replace(/^\*\*/, '') // Remove leading asterisks
+      .replace(/\*+$/, '') // Remove trailing asterisks
+      .replace(/^(?:Título:|Title:)\s*/i, '') // Remove "Título:" or "Title:" prefix
+      .trim();
+    
+    if (cleanTitle.length < 60 && !cleanTitle.match(/[.,:;?!]$/)) {
+      return cleanTitle;
     }
     
-    // Otherwise generate a title based on the topic
-    return `Historia de ${fallbackTopic}`;
+    // If we still can't find a good title, generate a creative one based on the topic
+    const creativeTitle = language === 'en' 
+      ? `The ${fallbackTopic} Adventure`
+      : `La Aventura de ${fallbackTopic}`;
+    
+    return creativeTitle;
   };

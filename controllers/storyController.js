@@ -30,16 +30,25 @@ exports.generateStory = async (req, res, next) => {
     // Check if user can generate more stories
     const canGenerateStory = await checkStoryGenerationLimit(user);
     if (!canGenerateStory) {
+      // If user is premium and has reached monthly limit
+      if (user.subscriptionStatus === 'active' && user.monthlyStoriesGenerated >= 30) {
+        return res.status(403).json({ 
+          error: 'Monthly limit reached',
+          message: storyParams.language === 'es' 
+            ? 'Has alcanzado tu límite mensual de 30 historias. Podrás generar más historias el próximo mes.'
+            : 'You have reached your monthly story generation limit of 30 stories. You will be able to generate more stories next month.',
+          subscriptionRequired: false,
+          storiesRemaining: 0
+        });
+      }
+      
+      // For free users or cancelled subscriptions
       return res.status(403).json({ 
         error: 'Story limit reached',
-        message: user.subscriptionStatus === 'active' 
-          ? (storyParams.language === 'es' 
-            ? 'Has alcanzado tu límite mensual de 30 historias.'
-            : 'You have reached your monthly story generation limit of 30 stories.')
-          : (storyParams.language === 'es'
-            ? 'Has alcanzado tu límite de historias gratuitas. Por favor, suscríbete para generar más historias.'
-            : 'You have reached your free story limit. Please subscribe to generate more stories.'),
-        subscriptionRequired: user.subscriptionStatus !== 'active',
+        message: storyParams.language === 'es'
+          ? 'Has alcanzado tu límite de historias gratuitas. Por favor, suscríbete para generar más historias.'
+          : 'You have reached your free story limit. Please subscribe to generate more stories.',
+        subscriptionRequired: true,
         storiesRemaining: await getStoriesRemaining(user)
       });
     }
@@ -49,7 +58,7 @@ exports.generateStory = async (req, res, next) => {
     const storyContent = await openaiService.generateCompletion(prompt, storyParams);
     
     // Extract or generate a title
-    const title = extractTitle(storyContent, storyParams.topic);
+    const title = extractTitle(storyContent, storyParams.topic, storyParams.language);
     
     // Create new story document
     const story = new Story({
@@ -137,23 +146,12 @@ async function checkStoryGenerationLimit(user) {
   user.checkAndResetMonthlyCount();
 
   // Free users get 3 stories total
-  if (user.subscriptionStatus === 'free') {
+  if (user.subscriptionStatus !== 'active') {
     return user.storiesGenerated < 3;
   }
 
   // Subscribed users get 30 stories per month
-  if (user.subscriptionStatus === 'active') {
-    // Check if subscription is still valid
-    if (user.subscriptionEndDate && user.subscriptionEndDate < new Date()) {
-      user.subscriptionStatus = 'cancelled';
-      await user.save();
-      return user.storiesGenerated < 3; // Fall back to free tier
-    }
-    return user.monthlyStoriesGenerated < 30; // 30 stories per month limit
-  }
-
-  // Cancelled subscriptions fall back to free tier
-  return user.storiesGenerated < 3;
+  return user.monthlyStoriesGenerated < 30;
 }
 
 async function getStoriesRemaining(user) {
