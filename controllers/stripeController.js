@@ -199,23 +199,20 @@ const handleWebhook = async (req, res) => {
       // Buscar usuario por el ID de referencia del cliente
       const user = await User.findById(session.client_reference_id);
       if (!user) {
-        console.log('🔴 USUARIO NO ENCONTRADO:', session.client_reference_id);
+        console.error('🔴 ERROR: Usuario no encontrado');
         return res.status(404).json({ error: 'Usuario no encontrado' });
       }
 
       // Actualizar estado de suscripción
       user.subscriptionStatus = 'active';
-      user.isPremium = true;
       user.stripeCustomerId = session.customer;
       user.stripeSubscriptionId = session.subscription;
       user.storiesRemaining = 30;
-
       await user.save();
+
       console.log('🟢 USUARIO ACTUALIZADO:', {
         email: user.email,
-        subscriptionStatus: user.subscriptionStatus,
-        isPremium: user.isPremium,
-        storiesRemaining: user.storiesRemaining
+        subscriptionStatus: user.subscriptionStatus
       });
     }
 
@@ -250,15 +247,40 @@ const handleWebhook = async (req, res) => {
       });
     }
 
+    // Manejar el evento customer.subscription.deleted
+    if (event.type === 'customer.subscription.deleted') {
+      const subscription = event.data.object;
+      console.log('🟢 SUBSCRIPTION DELETED:', {
+        subscriptionId: subscription.id,
+        customerId: subscription.customer
+      });
+
+      // Buscar usuario por el ID de cliente de Stripe
+      const user = await User.findOne({ stripeCustomerId: subscription.customer });
+      if (!user) {
+        console.error('🔴 ERROR: Usuario no encontrado');
+        return res.status(404).json({ error: 'Usuario no encontrado' });
+      }
+
+      // Actualizar estado de suscripción
+      user.subscriptionStatus = 'cancelled';
+      user.stripeSubscriptionId = null;
+      user.isPremium = false;
+      await user.save();
+
+      console.log('🟢 USUARIO ACTUALIZADO:', {
+        email: user.email,
+        subscriptionStatus: user.subscriptionStatus
+      });
+    }
+
     res.json({ received: true });
-  } catch (error) {
+  } catch (err) {
     console.error('🔴 ERROR EN WEBHOOK:', {
-      message: error.message,
-      name: error.name,
-      stack: error.stack
+      message: err.message,
+      stack: err.stack
     });
-    
-    res.status(400).send(`Webhook Error: ${error.message}`);
+    return res.status(400).send(`Webhook Error: ${err.message}`);
   }
 };
 
