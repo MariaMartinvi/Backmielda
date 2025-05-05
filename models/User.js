@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: true
+    required: false
   },
   storiesGenerated: {
     type: Number,
@@ -26,6 +26,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ['free', 'active', 'cancelled'],
     default: 'free'
+  },
+  isPremium: {
+    type: Boolean,
+    default: false
   },
   stripeCustomerId: String,
   stripeSubscriptionId: String,

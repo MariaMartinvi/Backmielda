@@ -53,7 +53,8 @@ const register = async (req, res) => {
         id: user._id,
         email: user.email,
         storiesGenerated: user.storiesGenerated,
-        subscriptionStatus: user.subscriptionStatus
+        subscriptionStatus: user.subscriptionStatus,
+        isPremium: user.subscriptionStatus === 'active'
       }
     });
   } catch (error) {
@@ -79,6 +80,7 @@ const login = async (req, res) => {
     }
 
     // Find user
+    console.log('Searching for user:', email);
     const user = await User.findOne({ email });
     if (!user) {
       console.log('User not found:', email);
@@ -89,6 +91,7 @@ const login = async (req, res) => {
     }
 
     // Check password
+    console.log('Checking password for user:', email);
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       console.log('Invalid password for user:', email);
@@ -99,13 +102,20 @@ const login = async (req, res) => {
     }
 
     // Generate JWT token
+    console.log('Generating JWT token for user:', email);
     const token = jwt.sign(
       { userId: user._id },
       process.env.JWT_SECRET,
       { expiresIn: process.env.JWT_EXPIRES_IN || '24h' }
     );
 
-    console.log('Login successful for user:', email);
+    console.log('Token generated successfully');
+    console.log('User data to be sent:', {
+      id: user._id,
+      email: user.email,
+      storiesGenerated: user.storiesGenerated,
+      subscriptionStatus: user.subscriptionStatus
+    });
 
     res.json({
       token,
@@ -113,11 +123,15 @@ const login = async (req, res) => {
         id: user._id,
         email: user.email,
         storiesGenerated: user.storiesGenerated,
-        subscriptionStatus: user.subscriptionStatus
+        subscriptionStatus: user.subscriptionStatus,
+        isPremium: user.subscriptionStatus === 'active'
       }
     });
   } catch (error) {
-    console.error('Login error:', error);
+    console.error('Login error:', {
+      message: error.message,
+      stack: error.stack
+    });
     res.status(500).json({ 
       error: 'Server error',
       details: error.message
@@ -151,7 +165,8 @@ const refreshToken = async (req, res) => {
         id: user._id,
         email: user.email,
         storiesGenerated: user.storiesGenerated,
-        subscriptionStatus: user.subscriptionStatus
+        subscriptionStatus: user.subscriptionStatus,
+        isPremium: user.subscriptionStatus === 'active'
       }
     });
   } catch (error) {
@@ -160,8 +175,42 @@ const refreshToken = async (req, res) => {
   }
 };
 
+const getCurrentUser = async (req, res) => {
+  try {
+    console.log('Getting current user for ID:', req.user._id);
+    
+    // El usuario ya está disponible en req.user gracias al middleware
+    const user = req.user;
+    
+    console.log('User found:', {
+      id: user._id,
+      email: user.email,
+      storiesGenerated: user.storiesGenerated,
+      subscriptionStatus: user.subscriptionStatus
+    });
+
+    res.json({
+      id: user._id,
+      email: user.email,
+      storiesGenerated: user.storiesGenerated,
+      subscriptionStatus: user.subscriptionStatus,
+      isPremium: user.subscriptionStatus === 'active'
+    });
+  } catch (error) {
+    console.error('Error getting current user:', {
+      message: error.message,
+      stack: error.stack
+    });
+    res.status(500).json({ 
+      error: 'Server error',
+      details: error.message
+    });
+  }
+};
+
 module.exports = {
   register,
   login,
-  refreshToken
+  refreshToken,
+  getCurrentUser
 }; 

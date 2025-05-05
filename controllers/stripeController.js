@@ -1,29 +1,33 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const User = require('../models/User');
 
-// Get frontend URL from environment or use default
-const FRONTEND_URL = process.env.FRONTEND_URL || 'https://www.micuentacuentos.com';
-
-// Create checkout session
+// Crear sesión de checkout
 const createCheckoutSession = async (req, res) => {
   try {
     const { email } = req.body;
-    console.log('Creating checkout session for:', email);
+    console.log('🔍 DEBUG CHECKOUT: Creando sesión para', email);
+    console.log('🔍 DEBUG CHECKOUT: Variables de entorno', {
+      STRIPE_PRICE_ID: process.env.STRIPE_PRICE_ID,
+      FRONTEND_URL: process.env.FRONTEND_URL
+    });
     
     if (!email) {
-      return res.status(400).json({ error: 'Email is required' });
+      return res.status(400).json({ error: 'Email es requerido' });
     }
     
-    // Find user by email
-    const user = await User.findOne({ email });
+    // Buscar o crear usuario
+    let user = await User.findOne({ email });
     
     if (!user) {
-      return res.status(404).json({ error: 'User not found' });
+      console.log('🔍 DEBUG CHECKOUT: Usuario no encontrado, creando nuevo');
+      user = await User.create({ 
+        email, 
+        subscriptionStatus: 'free',
+        storiesRemaining: 5 
+      });
     }
     
-    console.log('Using frontend URL for redirects:', FRONTEND_URL);
-    
-    // Create checkout session with TEST mode
+    // Crear sesión de checkout
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [
@@ -33,8 +37,8 @@ const createCheckoutSession = async (req, res) => {
         },
       ],
       mode: 'subscription',
-      success_url: `${FRONTEND_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${FRONTEND_URL}/subscribe`,
+      success_url: `${process.env.FRONTEND_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.FRONTEND_URL}/subscribe`,
       customer_email: email,
       client_reference_id: user._id.toString(),
       metadata: {
@@ -42,93 +46,223 @@ const createCheckoutSession = async (req, res) => {
       }
     });
     
-    console.log('Checkout session created:', session.id);
-    res.json({ id: session.id });
+    console.log('🟢 DEBUG CHECKOUT: Sesión creada', {
+      sessionId: session.id,
+      url: session.url
+    });
+    
+    res.json({ 
+      id: session.id, 
+      url: session.url 
+    });
   } catch (error) {
-    console.error('Error creating checkout session:', error);
+    console.error('🔴 DEBUG CHECKOUT: Error creando sesión', {
+      message: error.message,
+      stack: error.stack
+    });
     res.status(500).json({ error: error.message });
   }
 };
 
-// Handle success callback
+// Manejar éxito de pago
 const handleSuccess = async (req, res) => {
+  console.log('🔍 DEBUG SUCCESS: Inicio del método');
+  console.log('🔍 DEBUG SUCCESS: Query recibida', req.query);
+  
   try {
     const { session_id } = req.query;
-    console.log('Handling success for session ID:', session_id);
     
     if (!session_id) {
-      return res.status(400).json({ error: 'Session ID is required' });
+      console.log('🔴 DEBUG SUCCESS: No se proporcionó ID de sesión');
+      return res.status(400).json({ error: 'ID de sesión requerido' });
     }
     
-    // Retrieve the session
-    const session = await stripe.checkout.sessions.retrieve(session_id);
-    console.log('Session retrieved:', session.id, 'Payment status:', session.payment_status);
+    // Recuperar sesión de Stripe
+    const session = await stripe.checkout.sessions.retrieve(session_id, {
+      expand: ['customer', 'line_items', 'subscription']
+    });
     
+    console.log('🟢 DEBUG SUCCESS: Detalles de sesión', {
+      id: session.id,
+      payment_status: session.payment_status,
+      customer: session.customer,
+      client_reference_id: session.client_reference_id
+    });
+
+    // Verificar estado de pago
     if (session.payment_status !== 'paid') {
-      return res.status(400).json({ error: 'Payment not completed' });
+      console.log('🔴 DEBUG SUCCESS: Pago no completado', session.payment_status);
+      return res.status(400).json({ error: 'Pago no completado' });
     }
-    
-    // Get user ID from session
+
+    // Buscar usuario
     const userId = session.client_reference_id;
     const user = await User.findById(userId);
     
     if (!user) {
-      return res.status(404).json({ error: 'User not found' });
+      console.log(`🔴 DEBUG SUCCESS: Usuario no encontrado con ID: ${userId}`);
+      return res.status(404).json({ error: 'Usuario no encontrado' });
     }
-    
-    // Update user subscription status
+
+    console.log('🔍 DEBUG SUCCESS: Usuario antes de actualizar', {
+      email: user.email,
+      subscriptionStatus: user.subscriptionStatus
+    });
+
+    // Actualizar información de usuario
     user.subscriptionStatus = 'active';
     user.stripeCustomerId = session.customer;
     user.stripeSubscriptionId = session.subscription;
-    user.storiesRemaining = 30; // Reset stories quota
-    
+    user.storiesRemaining = 30;
+
     await user.save();
-    console.log('User subscription activated:', user.email);
-    
+
+    console.log('🟢 DEBUG SUCCESS: Usuario después de actualizar', {
+      email: user.email,
+      subscriptionStatus: user.subscriptionStatus
+    });
+
     res.json({
       success: true,
-      message: 'Subscription activated successfully'
+      message: 'Suscripción activada exitosamente',
+      user: {
+        id: user._id,
+        email: user.email,
+        subscriptionStatus: user.subscriptionStatus,
+        storiesRemaining: user.storiesRemaining
+      }
     });
   } catch (error) {
-    console.error('Error handling success:', error);
-    res.status(500).json({ error: error.message });
+    console.error('🔴 DEBUG SUCCESS: Error completo', {
+      message: error.message,
+      stack: error.stack,
+      name: error.name
+    });
+    res.status(500).json({ 
+      error: error.message,
+      stack: error.stack 
+    });
   }
 };
 
-// Handle webhook events
+// Manejar webhook de Stripe
 const handleWebhook = async (req, res) => {
+  console.log('🚨 WEBHOOK ULTRA DEBUG: MÉTODO INVOCADO');
+  console.log('🔍 DETALLES DE LA SOLICITUD:', {
+    method: req.method,
+    url: req.url,
+    headers: JSON.stringify(req.headers, null, 2),
+    body: req.body ? JSON.stringify(req.body, null, 2) : 'No body'
+  });
+
   const sig = req.headers['stripe-signature'];
-  
-  let event;
-  
+  console.log('🔍 STRIPE SIGNATURE:', sig);
+  console.log('🔍 WEBHOOK SECRET:', 
+    process.env.STRIPE_WEBHOOK_SECRET ? 
+    'Secret presente' : 
+    'Secret NO configurado'
+  );
+
+  if (!process.env.STRIPE_WEBHOOK_SECRET) {
+    console.error('🔴 ERROR: STRIPE_WEBHOOK_SECRET no configurado');
+    return res.status(500).json({ error: 'Webhook secret no configurado' });
+  }
+
+  if (!sig) {
+    console.error('🔴 ERROR: No se recibió la firma de Stripe');
+    return res.status(400).json({ error: 'No se recibió la firma de Stripe' });
+  }
+
   try {
-    event = stripe.webhooks.constructEvent(
-      req.body,
-      sig,
+    const event = stripe.webhooks.constructEvent(
+      req.body, 
+      sig, 
       process.env.STRIPE_WEBHOOK_SECRET
     );
-  } catch (err) {
-    console.error('Webhook signature verification failed:', err.message);
-    return res.status(400).send(`Webhook Error: ${err.message}`);
-  }
-  
-  // Handle various webhook events
-  switch (event.type) {
-    case 'customer.subscription.created':
-    case 'customer.subscription.updated':
+    
+    console.log('🟢 WEBHOOK EVENT RECIBIDO:', {
+      type: event.type,
+      id: event.id,
+      data: JSON.stringify(event.data, null, 2)
+    });
+
+    // Manejar el evento checkout.session.completed
+    if (event.type === 'checkout.session.completed') {
+      const session = event.data.object;
+      console.log('🟢 CHECKOUT SESSION COMPLETED:', {
+        sessionId: session.id,
+        customerId: session.customer,
+        subscriptionId: session.subscription,
+        clientReferenceId: session.client_reference_id
+      });
+
+      // Buscar usuario por el ID de referencia del cliente
+      const user = await User.findById(session.client_reference_id);
+      if (!user) {
+        console.log('🔴 USUARIO NO ENCONTRADO:', session.client_reference_id);
+        return res.status(404).json({ error: 'Usuario no encontrado' });
+      }
+
+      // Actualizar estado de suscripción
+      user.subscriptionStatus = 'active';
+      user.isPremium = true;
+      user.stripeCustomerId = session.customer;
+      user.stripeSubscriptionId = session.subscription;
+      user.storiesRemaining = 30;
+
+      await user.save();
+      console.log('🟢 USUARIO ACTUALIZADO:', {
+        email: user.email,
+        subscriptionStatus: user.subscriptionStatus,
+        isPremium: user.isPremium,
+        storiesRemaining: user.storiesRemaining
+      });
+    }
+
+    // Manejar el evento customer.subscription.created
+    if (event.type === 'customer.subscription.created') {
       const subscription = event.data.object;
-      // Handle subscription update
-      break;
-      
-    case 'customer.subscription.deleted':
-      const cancelledSubscription = event.data.object;
-      // Handle subscription cancellation
-      break;
+      console.log('🟢 CUSTOMER SUBSCRIPTION CREATED:', {
+        subscriptionId: subscription.id,
+        customerId: subscription.customer,
+        status: subscription.status
+      });
+
+      // Buscar usuario por el ID del cliente de Stripe
+      const user = await User.findOne({ stripeCustomerId: subscription.customer });
+      if (!user) {
+        console.log('🔴 USUARIO NO ENCONTRADO PARA EL CLIENTE:', subscription.customer);
+        return res.status(404).json({ error: 'Usuario no encontrado' });
+      }
+
+      // Actualizar estado de suscripción
+      user.subscriptionStatus = subscription.status;
+      user.isPremium = true;
+      user.stripeSubscriptionId = subscription.id;
+      user.storiesRemaining = 30;
+
+      await user.save();
+      console.log('🟢 USUARIO ACTUALIZADO:', {
+        email: user.email,
+        subscriptionStatus: user.subscriptionStatus,
+        isPremium: user.isPremium,
+        storiesRemaining: user.storiesRemaining
+      });
+    }
+
+    res.json({ received: true });
+  } catch (error) {
+    console.error('🔴 ERROR EN WEBHOOK:', {
+      message: error.message,
+      name: error.name,
+      stack: error.stack
+    });
+    
+    res.status(400).send(`Webhook Error: ${error.message}`);
   }
-  
-  res.json({ received: true });
 };
 
+// Exportar todos los controladores
 module.exports = {
   createCheckoutSession,
   handleSuccess,

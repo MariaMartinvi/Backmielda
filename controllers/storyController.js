@@ -55,7 +55,7 @@ exports.generateStory = async (req, res, next) => {
     });
     await story.save();
     
-    // Update user's story counts
+    // Update user's story counts AFTER successful story generation and save
     user.storiesGenerated += 1;
     if (user.subscriptionStatus === 'active') {
       user.monthlyStoriesGenerated += 1;
@@ -63,13 +63,13 @@ exports.generateStory = async (req, res, next) => {
     await user.save();
     
     // Return the generated story
-    return {
+    return res.json({
       title,
       content: storyContent,
       parameters: storyParams,
       timestamp: new Date().toISOString(),
       storiesRemaining: await getStoriesRemaining(user)
-    };
+    });
   } catch (error) {
     next(error);
   }

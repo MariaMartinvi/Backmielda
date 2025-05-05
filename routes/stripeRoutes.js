@@ -1,17 +1,31 @@
 const express = require('express');
 const router = express.Router();
-const stripeController = require('../controllers/stripeController');
+const bodyParser = require('body-parser');
 
-// Create checkout session
-router.post('/create-checkout-session', stripeController.createCheckoutSession);
+// Importar controladores
+const { 
+  createCheckoutSession, 
+  handleSuccess,
+  handleWebhook
+} = require('../controllers/stripeController');
 
-// Handle success redirect
-router.get('/success', stripeController.handleSuccess);
+// Importar middlewares de webhook
+const webhookAvailabilityCheck = require('../middleware/webhookAvailability');
 
-// Handle Stripe webhooks
+// Ruta del webhook de Stripe
 router.post('/webhook', 
-    express.raw({type: 'application/json'}), 
-    stripeController.handleWebhook
-  );
+  // Importante: parsear el body como raw
+  bodyParser.raw({type: 'application/json'}),
+  
+  // Middleware de verificación de disponibilidad
+  webhookAvailabilityCheck,
+  
+  // Manejador final del webhook
+  handleWebhook
+);
 
-module.exports = router; 
+// Otras rutas de Stripe
+router.post('/create-checkout-session', createCheckoutSession);
+router.get('/success', handleSuccess);
+
+module.exports = router;
