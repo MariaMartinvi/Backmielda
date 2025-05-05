@@ -7,39 +7,26 @@ const dotenv = require('dotenv');
 const envPath = path.resolve(__dirname, '.env');
 console.log('Loading environment variables from:', envPath);
 
-// Check if .env file exists
-if (!fs.existsSync(envPath)) {
-  console.error('Error: .env file not found at:', envPath);
-  process.exit(1);
-}
-
-// Try to read the file to verify permissions
-try {
-  const envContent = fs.readFileSync(envPath, 'utf8');
-  console.log('.env file exists and is readable');
-  console.log('File size:', envContent.length, 'bytes');
-  
-  // Load environment variables
+// Only try to load .env file if it exists (development environment)
+if (fs.existsSync(envPath)) {
+  console.log('.env file found, loading from file');
   const result = dotenv.config({ path: envPath });
-  
   if (result.error) {
     console.error('Error loading .env file:', result.error);
     process.exit(1);
   }
-  
-  // Log environment variables (without sensitive data)
-  console.log('Environment Variables Check:');
-  console.log('STRIPE_SECRET_KEY length:', process.env.STRIPE_SECRET_KEY ? process.env.STRIPE_SECRET_KEY.length : 'NOT SET');
-  console.log('STRIPE_SECRET_KEY prefix:', process.env.STRIPE_SECRET_KEY ? process.env.STRIPE_SECRET_KEY.substring(0, 7) : 'NOT SET');
-  console.log('STRIPE_PRICE_ID:', process.env.STRIPE_PRICE_ID || 'NOT SET');
-  console.log('FRONTEND_URL:', process.env.FRONTEND_URL || 'NOT SET');
-  console.log('MONGODB_URI:', process.env.MONGODB_URI ? 'Set' : 'NOT SET');
-  console.log('JWT_SECRET:', process.env.JWT_SECRET ? 'Set' : 'NOT SET');
-  
-} catch (error) {
-  console.error('Error reading .env file:', error);
-  process.exit(1);
+} else {
+  console.log('No .env file found, using environment variables from system');
 }
+
+// Log environment variables (without sensitive data)
+console.log('Environment Variables Check:');
+console.log('STRIPE_SECRET_KEY length:', process.env.STRIPE_SECRET_KEY ? process.env.STRIPE_SECRET_KEY.length : 'NOT SET');
+console.log('STRIPE_SECRET_KEY prefix:', process.env.STRIPE_SECRET_KEY ? process.env.STRIPE_SECRET_KEY.substring(0, 7) : 'NOT SET');
+console.log('STRIPE_PRICE_ID:', process.env.STRIPE_PRICE_ID || 'NOT SET');
+console.log('FRONTEND_URL:', process.env.FRONTEND_URL || 'NOT SET');
+console.log('MONGODB_URI:', process.env.MONGODB_URI ? 'Set' : 'NOT SET');
+console.log('JWT_SECRET:', process.env.JWT_SECRET ? 'Set' : 'NOT SET');
 
 // Only after environment variables are loaded, require other modules
 const express = require('express');
