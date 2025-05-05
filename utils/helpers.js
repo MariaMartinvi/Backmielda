@@ -213,15 +213,25 @@ IMPORTANTE: La historia debe tener exactamente ${length === 'corto' ? '100' : le
     const lines = content.split('\n');
     const firstLine = lines[0].trim();
     
-    // Remove any asterisks and "Título:" or "Title:" prefix
+    // Remove any asterisks, "Título:" or "Title:" prefix, and clean up
     const cleanTitle = firstLine
-      .replace(/^\*\*/, '') // Remove leading asterisks
-      .replace(/\*+$/, '') // Remove trailing asterisks
+      .replace(/[*]+/g, '') // Remove all asterisks
       .replace(/^(?:Título:|Title:)\s*/i, '') // Remove "Título:" or "Title:" prefix
+      .replace(/^["']|["']$/g, '') // Remove surrounding quotes
+      .trim();
+    
+    // Clean the content of asterisks
+    const cleanContent = content
+      .replace(/[*]+/g, '') // Remove all asterisks
+      .replace(/^(?:Título:|Title:)\s*/i, '') // Remove "Título:" or "Title:" prefix
+      .replace(/^["']|["']$/g, '') // Remove surrounding quotes
       .trim();
     
     if (cleanTitle.length < 60 && !cleanTitle.match(/[.,:;?!]$/)) {
-      return cleanTitle;
+      return {
+        title: cleanTitle,
+        content: cleanContent
+      };
     }
     
     // If we still can't find a good title, generate a creative one based on the topic
@@ -229,5 +239,8 @@ IMPORTANTE: La historia debe tener exactamente ${length === 'corto' ? '100' : le
       ? `The ${fallbackTopic} Adventure`
       : `La Aventura de ${fallbackTopic}`;
     
-    return creativeTitle;
+    return {
+      title: creativeTitle,
+      content: cleanContent
+    };
   };

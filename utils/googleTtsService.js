@@ -6,7 +6,7 @@ const axios = require('axios');
 function getGoogleVoiceName(voiceId) {
   switch (voiceId) {
     case 'female':
-      return 'es-ES-Neural2-A';
+      return 'es-ES-Neural2-H';
     case 'male':
       return 'es-ES-Standard-B';
     case 'female-latam':
@@ -45,7 +45,7 @@ exports.synthesizeSpeech = async (text, voiceId, speechRate) => {
     if (voiceId.includes('english')) {
       languageCode = 'en-US';
     } else if (voiceId.includes('latam')) {
-      languageCode = 'es-419';
+      languageCode = 'es-US';
     } else {
       languageCode = 'es-ES';
     }

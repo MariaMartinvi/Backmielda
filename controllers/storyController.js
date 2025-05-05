@@ -57,13 +57,13 @@ exports.generateStory = async (req, res, next) => {
     const prompt = constructPrompt(storyParams);
     const storyContent = await openaiService.generateCompletion(prompt, storyParams);
     
-    // Extract or generate a title
-    const title = extractTitle(storyContent, storyParams.topic, storyParams.language);
+    // Extract or generate a title and clean content
+    const { title, content } = extractTitle(storyContent, storyParams.topic, storyParams.language);
     
     // Create new story document
     const story = new Story({
       title,
-      content: storyContent,
+      content,
       user: user._id
     });
     await story.save();
@@ -78,16 +78,17 @@ exports.generateStory = async (req, res, next) => {
     // Return the generated story
     return res.json({
       title,
-      content: storyContent,
+      content,
       parameters: storyParams,
       timestamp: new Date().toISOString(),
       storiesRemaining: await getStoriesRemaining(user)
     });
   } catch (error) {
     console.error('Error generating story:', error);
+    const language = req.body.language || 'es';
     return res.status(500).json({ 
       error: 'Story generation failed',
-      message: storyParams.language === 'es'
+      message: language === 'es'
         ? 'Ha ocurrido un error al generar el cuento. Por favor, inténtalo de nuevo.'
         : 'An error occurred while generating the story. Please try again.'
     });
