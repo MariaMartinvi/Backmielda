@@ -18,9 +18,11 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://micuentacuentos.com', 'https://*.render.com']
+    ? ['https://www.micuentacuentos.com', 'https://micuentacuentos.com']
     : process.env.FRONTEND_URL || 'http://localhost:3000',
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin']
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -38,7 +40,8 @@ app.use(session({
   cookie: {
     secure: process.env.NODE_ENV === 'production',
     httpOnly: true,
-    maxAge: 24 * 60 * 60 * 1000 // 1 day
+    maxAge: 24 * 60 * 60 * 1000, // 1 day
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
   }
 }));
 
@@ -75,16 +78,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/cuentos-d
 const PORT = process.env.PORT || 5001;
 
 // Start server
-if (process.env.NODE_ENV === 'production') {
-  // In production, we're behind Nginx which handles SSL
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
-} else {
-  // In development, we can use HTTP
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
-}
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 module.exports = app; 
