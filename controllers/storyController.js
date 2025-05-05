@@ -75,7 +75,13 @@ exports.generateStory = async (req, res, next) => {
       storiesRemaining: await getStoriesRemaining(user)
     });
   } catch (error) {
-    next(error);
+    console.error('Error generating story:', error);
+    return res.status(500).json({ 
+      error: 'Story generation failed',
+      message: storyParams.language === 'es'
+        ? 'Ha ocurrido un error al generar el cuento. Por favor, inténtalo de nuevo.'
+        : 'An error occurred while generating the story. Please try again.'
+    });
   }
 };
 

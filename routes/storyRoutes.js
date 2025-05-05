@@ -10,7 +10,9 @@ router.post('/generate', auth, async (req, res, next) => {
     // Check if user can generate more stories
     if (!req.user.canGenerateStory()) {
       return res.status(403).json({
-        message: 'You have reached your story limit. Please subscribe to generate more stories.',
+        message: req.body.language === 'es' 
+          ? 'Has alcanzado tu límite de historias gratuitas. Por favor, suscríbete para generar más historias.'
+          : 'You have reached your story limit. Please subscribe to generate more stories.',
         requiresSubscription: true
       });
     }
