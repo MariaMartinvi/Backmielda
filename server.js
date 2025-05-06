@@ -43,6 +43,7 @@ const googleAuthRoutes = require('./routes/auth');
 const stripeRoutes = require('./routes/stripeRoutes');
 const audioRoutes = require('./routes/audioRoutes');
 const subscriptionRoutes = require('./routes/subscriptionRoutes');
+const contactRoutes = require('./routes/contactRoutes');
 
 // Create Express app - THIS MUST COME BEFORE TRYING TO ACCESS app._router!
 const app = express();
@@ -151,6 +152,8 @@ console.log('Stripe routes registered');
 app.use('/api/audio', audioRoutes);
 console.log('Audio routes registered');
 app.use('/api/subscription', subscriptionRoutes);
+app.use('/api/contact', contactRoutes);
+console.log('Contact routes registered');
 console.log('Subscription routes registered');
 
 // Health check route
