@@ -12,6 +12,7 @@ const googleAuthRoutes = require('./routes/auth');
 const stripeRoutes = require('./routes/stripeRoutes');
 const storyRoutes = require('./routes/storyRoutes');
 const subscriptionRoutes = require('./routes/subscriptionRoutes');
+const contactRoutes = require('./routes/contactRoutes');
 
 const app = express();
 
@@ -63,6 +64,7 @@ app.use('/api/auth', authRoutes);       // Otras rutas de autenticación despué
 app.use('/api/stripe', stripeRoutes);
 app.use('/api/stories', storyRoutes);
 app.use('/api/subscription', subscriptionRoutes);
+app.use('/api/contact', contactRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
