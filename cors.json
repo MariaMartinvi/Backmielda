@@ -1,0 +1,8 @@
+[
+  {
+    "origin": ["http://localhost:3000", "https://www.audiogretel.com", "https://audiogretel.com"],
+    "method": ["GET", "HEAD", "OPTIONS"],
+    "maxAgeSeconds": 3600,
+    "responseHeader": ["Content-Type", "Access-Control-Allow-Origin", "Range", "Content-Length", "Content-Range"]
+  }
+] 

@@ -1,0 +1,36 @@
+{
+  "stories": [
+    {
+      "filename": "epinards.txt",
+      "analysis": {
+        "title": "Lincroyable Aventure de la Glace aux Épinards",
+        "protagonista": "Ana",
+        "wordCount": 543,
+        "hasDialogue": true,
+        "content": "L'incroyable Aventure de la Glace aux Épinards\n\nAnne, une jeune fille curieuse et pleine d'entrain, avait une idée aussi bizarre que brillante : créer la première glace aux épinards du monde. Armée de son carnet de notes et d'une cuillère en bois, elle se mit à l'œuvre dans la cuisine de ses parents, un lieu qu'elle qualifiait de \"laboratoire culinaire\".\n\nTout commença un samedi matin. Anne avait observé avec fascination les légumes oubliés au fond du réfrigérateur, lorsque soudain, une idée la frappa comme une épiphanie culinaire. \"Pourquoi ne pas transformer ces épinards tristes en quelque chose d'extraordinairement délicieux ?\" pensa-t-elle. Après tout, elle adorait les défis insolites.\n\nAnne commença par rassembler tous les ingrédients qu'elle pouvait trouver : du yaourt, un peu de sucre, et bien sûr, une bonne poignée d'épinards. Elle se mit à mixer le tout avec enthousiasme. Le bruit du mixeur résonnait dans toute la maison, attirant l'attention de son chat, Fripouille, qui observait la scène avec des yeux ronds comme des billes.\n\nLa première tentative d'Anne fut, disons, surprenante. La glace avait une couleur vert fluo et une texture un peu granuleuse. Mais Anne était déterminée. Elle ajouta une pincée de menthe pour un goût plus frais, espérant ainsi masquer quelque peu l'amertume naturelle des épinards. Pourtant, chaque cuillère offrait une explosion de saveurs improbables.\n\nC'est alors que sa meilleure amie, Léa, fit irruption dans la cuisine. \"Qu'est-ce que tu mijotes encore ?\" demanda-t-elle en plissant le nez. Anne, avec un sourire malicieux, lui tendit une cuillère. \"Goûte et tu verras !\". Léa hésita, puis s'exécuta. Son visage passa par une série de grimaces avant de lâcher un rire incontrôlable. \"C'est... c'est vraiment étrange, mais pas mauvais du tout !\" dit-elle en essuyant une larme de rire.\n\nEncouragées par ce premier retour, les deux amies décidèrent d'organiser une dégustation pour le quartier. Elles installèrent un stand devant la maison, avec une banderole colorée affichant un message intrigant : \"Dégustez la Glace Révolutionnaire aux Épinards !\". Les passants, d'abord réticents, furent attirés par l'étrangeté de l'offre.\n\nParmi les premiers curieux se trouvait Monsieur Dupont, le voisin grincheux réputé pour son manque d'enthousiasme. Anne, avec une assurance retrouvée, lui servit une boule généreuse. Après une première bouchée, Monsieur Dupont s'éclaircit la gorge d'un air solennel, avant de déclarer : \"C'est… surprenant. Je n'aurais jamais pensé que les épinards pouvaient être aussi… ludiques !\"\n\nTout semblait parfait, jusqu'à ce qu'un obstacle imprévu surgisse : les corbeaux du quartier. Attirés par la couleur vive et l'agitation, ils commencèrent à tournoyer au-dessus du stand. \"Oh non !\" s'écria Léa, alors que l'un des oiseaux plongeait en piqué, renversant la table et provoquant une pagaille générale.\n\nAnne, sans perdre son sang-froid, eut une idée lumineuse. Elle lança des morceaux de pain aux corbeaux pour les distraire, tandis que Léa et elle reconstituaient rapidement le stand. Les passants, amusés par ce spectacle inattendu, se mirent à applaudir.\n\nAu final, la journée fut un succès. La glace aux épinards fut adoptée par le quartier, et même Fripouille se joignit à la fête en léchant une cuillère tombée. Anne, satisfaite, se promit de continuer à explorer les combinaisons culinaires les plus folles. Après tout, avec un peu d'imagination, même les légumes les plus ordinaires pouvaient devenir extraordinaires."
+      },
+      "success": true,
+      "path": "stories/epinards.txt",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/stories/epinards.txt?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=dWV4Zp6S4d7uNe0M6dqUzDIX6%2FuaUVwSqEg4%2F8BElOrGtaIysObVQTOi0NFhN8CXIlXAneX%2FValTvo0O6QssAuCJUJL8JEi3dul7MrSOK8u1II%2BH6CKeFBns7TM88Kn5c86tQsH6hHpOHpOsoh35OFMNNMpmn05%2Fgh9UOeCEsgt9VAIgfYzfRU3xCiTj3ZwhTlHvm0iA%2FjVaseuzwhipm%2BxOtpHR3Da0dEDznkk7rwLdZUsFCccq6uF359BWaE8W6By59VLBnsNnK912O%2BKH3TqAkYNYFT02xnyoGgTQiKzHzUoZC4yQIUx9AZgnoXtGCvTajjRKlRrlI1zE8GL%2BRw%3D%3D",
+      "size": 3616
+    }
+  ],
+  "images": [
+    {
+      "filename": "epinards.jpg",
+      "success": true,
+      "path": "images/epinards.jpg",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/images/epinards.jpg?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=im1sRwe%2FCOE%2FGEzrRaPUKLNoq40tsZqhN5y%2BoQm4BKf%2FChVDZ3fWpIzvfsgybRrrtAwUos%2B%2FQWs2lCSut%2BB7HmUcw1wzo60gmGq0H0%2FiTcfB%2BIn3Pp95%2BI2kDEAKwiY8MObip1OUlKF5yfq7cRia6q3LSlQRZr%2F48fzpoaCpPGWxdQZouFT3jhB28Xs5VUEJWIF5EdBteT4Agw8vLhLZqlR9GR2%2F3vjnX3MAO1oNSC61gx%2FZvbb6DuwW0Bb0vidBvfLnwxj%2Brn2dmsezPbko%2FayqS6mf%2FWdeP%2BEJLkj5aL1k3sgMKTPITubir9YwNEMfFyd9gFYaedlL2p220W1oZw%3D%3D",
+      "size": 178297
+    }
+  ],
+  "audio": [
+    {
+      "filename": "epinards.mp3",
+      "success": true,
+      "path": "audio/epinards.mp3",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/audio/epinards.mp3?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=bp0w%2ByhKPLmX3BLCu0w6x5D9XVJ1JwX47eeWobE4cNvsHNKnf2yUZaN21UCaonCgCE7%2BEdTqaCpThUrnYThuG7ZKbwdK3OT%2F7qxZR855mBP59wmegN7FWH4rAyacQJMNzDrIT97kVSZLIfilD658hHwhlpsypJ%2BLsmEBpaIRPa4HT384W48xKvk9xAgH5vGzTtRitXcm4l0Udx%2BWepjXP065%2BrhzmTRXrkBcPTyx3Nfuxv2qtjxg9i7d%2BnU0xmL8D0TLbPEdtmTz5Q%2Bpfr9%2ByduUsO3js59yPZjM89c6mpJxacbw6e9c9CiK2oi6Et%2Ff178%2FvrErUmOBufZujHkCQA%3D%3D",
+      "size": 1715757
+    }
+  ]
+}

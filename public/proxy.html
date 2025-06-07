@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firebase Storage Proxy</title>
+</head>
+<body>
+  <h1>Firebase Storage Proxy</h1>
+  <p>This page serves as a proxy for Firebase Storage files to avoid CORS issues.</p>
+  
+  <script>
+    // Listen for messages from the parent window
+    window.addEventListener('message', async function(event) {
+      // Check if the message is a request to fetch a file
+      if (event.data && event.data.type === 'fetchFile' && event.data.url) {
+        try {
+          console.log('Proxy: Fetching file from URL:', event.data.url);
+          
+          // Fetch the file
+          const response = await fetch(event.data.url, {
+            method: 'GET',
+            mode: 'cors',
+            cache: 'no-cache'
+          });
+          
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          
+          // Get the content based on the requested type
+          let content;
+          if (event.data.contentType === 'text') {
+            content = await response.text();
+          } else if (event.data.contentType === 'blob') {
+            content = await response.blob();
+            // Convert blob to data URL
+            const reader = new FileReader();
+            content = await new Promise((resolve) => {
+              reader.onloadend = () => resolve(reader.result);
+              reader.readAsDataURL(content);
+            });
+          } else {
+            content = await response.text();
+          }
+          
+          // Send the content back to the parent window
+          window.parent.postMessage({
+            type: 'fileContent',
+            requestId: event.data.requestId,
+            content: content,
+            success: true
+          }, '*');
+          
+        } catch (error) {
+          console.error('Proxy: Error fetching file:', error);
+          
+          // Send error back to parent window
+          window.parent.postMessage({
+            type: 'fileContent',
+            requestId: event.data.requestId,
+            error: error.message,
+            success: false
+          }, '*');
+        }
+      }
+    });
+    
+    // Notify parent that proxy is ready
+    window.parent.postMessage({ type: 'proxyReady' }, '*');
+  </script>
+</body>
+</html> 

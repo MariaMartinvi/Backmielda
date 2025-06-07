@@ -1,0 +1,66 @@
+{
+  "stories": [
+    {
+      "filename": "epinards.txt",
+      "analysis": {
+        "title": "Lincroyable Aventure de la Glace aux Épinards",
+        "protagonista": "Anne",
+        "language": "french",
+        "wordCount": 543,
+        "hasDialogue": true,
+        "content": "L'incroyable Aventure de la Glace aux Épinards\n\nAnne, une jeune fille curieuse et pleine d'entrain, avait une idée aussi bizarre que brillante : créer la première glace aux épinards du monde. Armée de son carnet de notes et d'une cuillère en bois, elle se mit à l'œuvre dans la cuisine de ses parents, un lieu qu'elle qualifiait de \"laboratoire culinaire\".\n\nTout commença un samedi matin. Anne avait observé avec fascination les légumes oubliés au fond du réfrigérateur, lorsque soudain, une idée la frappa comme une épiphanie culinaire. \"Pourquoi ne pas transformer ces épinards tristes en quelque chose d'extraordinairement délicieux ?\" pensa-t-elle. Après tout, elle adorait les défis insolites.\n\nAnne commença par rassembler tous les ingrédients qu'elle pouvait trouver : du yaourt, un peu de sucre, et bien sûr, une bonne poignée d'épinards. Elle se mit à mixer le tout avec enthousiasme. Le bruit du mixeur résonnait dans toute la maison, attirant l'attention de son chat, Fripouille, qui observait la scène avec des yeux ronds comme des billes.\n\nLa première tentative d'Anne fut, disons, surprenante. La glace avait une couleur vert fluo et une texture un peu granuleuse. Mais Anne était déterminée. Elle ajouta une pincée de menthe pour un goût plus frais, espérant ainsi masquer quelque peu l'amertume naturelle des épinards. Pourtant, chaque cuillère offrait une explosion de saveurs improbables.\n\nC'est alors que sa meilleure amie, Léa, fit irruption dans la cuisine. \"Qu'est-ce que tu mijotes encore ?\" demanda-t-elle en plissant le nez. Anne, avec un sourire malicieux, lui tendit une cuillère. \"Goûte et tu verras !\". Léa hésita, puis s'exécuta. Son visage passa par une série de grimaces avant de lâcher un rire incontrôlable. \"C'est... c'est vraiment étrange, mais pas mauvais du tout !\" dit-elle en essuyant une larme de rire.\n\nEncouragées par ce premier retour, les deux amies décidèrent d'organiser une dégustation pour le quartier. Elles installèrent un stand devant la maison, avec une banderole colorée affichant un message intrigant : \"Dégustez la Glace Révolutionnaire aux Épinards !\". Les passants, d'abord réticents, furent attirés par l'étrangeté de l'offre.\n\nParmi les premiers curieux se trouvait Monsieur Dupont, le voisin grincheux réputé pour son manque d'enthousiasme. Anne, avec une assurance retrouvée, lui servit une boule généreuse. Après une première bouchée, Monsieur Dupont s'éclaircit la gorge d'un air solennel, avant de déclarer : \"C'est… surprenant. Je n'aurais jamais pensé que les épinards pouvaient être aussi… ludiques !\"\n\nTout semblait parfait, jusqu'à ce qu'un obstacle imprévu surgisse : les corbeaux du quartier. Attirés par la couleur vive et l'agitation, ils commencèrent à tournoyer au-dessus du stand. \"Oh non !\" s'écria Léa, alors que l'un des oiseaux plongeait en piqué, renversant la table et provoquant une pagaille générale.\n\nAnne, sans perdre son sang-froid, eut une idée lumineuse. Elle lança des morceaux de pain aux corbeaux pour les distraire, tandis que Léa et elle reconstituaient rapidement le stand. Les passants, amusés par ce spectacle inattendu, se mirent à applaudir.\n\nAu final, la journée fut un succès. La glace aux épinards fut adoptée par le quartier, et même Fripouille se joignit à la fête en léchant une cuillère tombée. Anne, satisfaite, se promit de continuer à explorer les combinaisons culinaires les plus folles. Après tout, avec un peu d'imagination, même les légumes les plus ordinaires pouvaient devenir extraordinaires."
+      },
+      "success": true,
+      "path": "stories/epinards.txt",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/stories/epinards.txt?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=dWV4Zp6S4d7uNe0M6dqUzDIX6%2FuaUVwSqEg4%2F8BElOrGtaIysObVQTOi0NFhN8CXIlXAneX%2FValTvo0O6QssAuCJUJL8JEi3dul7MrSOK8u1II%2BH6CKeFBns7TM88Kn5c86tQsH6hHpOHpOsoh35OFMNNMpmn05%2Fgh9UOeCEsgt9VAIgfYzfRU3xCiTj3ZwhTlHvm0iA%2FjVaseuzwhipm%2BxOtpHR3Da0dEDznkk7rwLdZUsFCccq6uF359BWaE8W6By59VLBnsNnK912O%2BKH3TqAkYNYFT02xnyoGgTQiKzHzUoZC4yQIUx9AZgnoXtGCvTajjRKlRrlI1zE8GL%2BRw%3D%3D",
+      "size": 3616
+    },
+    {
+      "filename": "pajaro.txt",
+      "analysis": {
+        "title": "El Pájaro Silencioso y las Hermanas Curiosas",
+        "protagonista": "Ana",
+        "language": "spanish",
+        "wordCount": 569,
+        "hasDialogue": true,
+        "content": "El Pájaro Silencioso y las Hermanas Curiosas\n\nEn un pequeño pueblo donde siempre había un concierto de trinos y gorjeos al amanecer, vivía un pájaro llamado Silvio. A diferencia de sus amigos alados, Silvio era un pájaro que no quería cantar. Prefería contemplar las nubes en silencio, haciéndole pensar a los demás que era un poco extraño.\n\nUna mañana, mientras el resto de los pájaros afinaban sus voces, dos hermanas, María y Sara, decidieron investigar por qué Silvio nunca cantaba. María, que siempre llevaba un sombrero de paja demasiado grande para su cabeza, decía: \"Tal vez Silvio no sabe cantar\".\n\nSara, que no salía de casa sin su lupa, replicó: \"O tal vez simplemente no le gusta cantar. Deberíamos preguntarle\".\n\nLas hermanas se adentraron en el bosque hasta llegar al árbol favorito de Silvio. Allí estaba él, balanceándose en una rama, mirando al cielo con sus ojos soñadores.\n\n\"Hola, Silvio\", saludó María, mientras su sombrero casi salía volando con el viento. \"¿Por qué nunca te escuchamos cantar? ¿No te gusta la música?\"\n\nSilvio suspiró y dijo: \"Es que no quiero cantar, porque cada vez que lo intento, ¡pasa algo raro!\".\n\nCuriosas, María y Sara pidieron más detalles. Silvio les contó que cada vez que intentaba cantar, un ruido extraño como el de una trompeta desafinada salía de su pico. \"Es como si tuviera una banda de jazz descontrolada en mi garganta\", explicó.\n\nMaría soltó una carcajada. \"¡Eso suena divertido!\", exclamó mientras intentaba mantener su sombrero en su lugar. \"Pero debe ser difícil\".\n\nDecididas a ayudar a Silvio, las hermanas idearon un plan. \"Intentaremos que cantes sin que suene como una trompeta loca\", dijo Sara, sacando su libreta de ideas.\n\nEl primer intento fue con una menta de eucalipto. \"Esto despejará tu garganta\", dijo María, ofreciéndole la pastilla. Silvio la aceptó con escepticismo y, al intentarlo de nuevo, el sonido fue aún más fuerte, haciendo que un grupo de ardillas se cayera de una rama cercana.\n\n\"¡Ups!\", exclamó Sara. \"Creo que necesitamos un enfoque diferente\".\n\nEl segundo intento consistió en que Silvio cantara mientras se balanceaba en la rama. \"Quizás los movimientos ayuden\", sugirió Sara.\n\nSilvio lo intentó, pero terminó girando tan rápido que se mareó, y el sonido que salió fue una mezcla de trompeta con tambor. Las hermanas se rieron tanto que María terminó cayéndose de la rama, aterrizando suavemente sobre un arbusto.\n\nFinalmente, después de varios intentos fallidos, Sara tuvo una idea. \"Y si dejaras de preocuparte por el sonido y simplemente disfrutaras?\".\n\nSilvio, un poco dudoso pero dispuesto a intentarlo, cerró los ojos y cantó. Esta vez, el sonido que salió era una mezcla cómica de trompeta y risas, pero curiosamente, a los animales del bosque les encantó. Pronto, todos los animales se unieron al canto, creando la orquesta más peculiar que jamás se había escuchado.\n\nMaría y Sara aplaudieron emocionadas. \"¡Eres un genio, Silvio!\", gritó María, mientras su sombrero finalmente decidió volar.\n\nDesde ese día, Silvio se convirtió en el director de la \"Orquesta de la Risa\" del bosque, y todos los días, al amanecer, se escuchaba su singular canto, recordando a todos que a veces, lo único que se necesita es disfrutar el momento.\n\nY así, el pájaro que no quería cantar terminó liderando la banda más divertida del bosque, mientras María y Sara se aseguraban de que su amigo nunca dejara de disfrutar de cada nota, incluso si sonaba como una trompeta desafinada."
+      },
+      "success": true,
+      "path": "stories/pajaro.txt",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/stories/pajaro.txt?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=xT3QwH6GvBtEsQ1ioF8C1nbZR%2BoA3LJwjlg221m%2FmSG%2FjDyVri3lYi4qopxYUP%2FxwaZQAWvAFaqh4l%2B4mqpRgCz8Z0Zgz4%2FC4dmci0EDgRULqVt5NV3r%2Fa%2FHgXPWVPYP9m4ODMnNSraUEqSlqmk4KmnYnUhlhQgwun2mF90sPEmIvw4OAgUronbUxZ2m%2FpIq9NxbTrPA997zsF3M9YIaLB2tZ8r4sPRX4TwYImTPFoeFWvNcleAGVNguWcwTD79dG%2FIsljD3fmfTpQtFvGw%2BgIsdobH4nTWo%2BRIhDqyOr4wzBU%2BSlbcUeP5Y9QBBCRbAIc6KHcr%2B71ycigVSyNPZtA%3D%3D",
+      "size": 3549
+    }
+  ],
+  "images": [
+    {
+      "filename": "epinards.jpg",
+      "success": true,
+      "path": "images/epinards.jpg",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/images/epinards.jpg?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=im1sRwe%2FCOE%2FGEzrRaPUKLNoq40tsZqhN5y%2BoQm4BKf%2FChVDZ3fWpIzvfsgybRrrtAwUos%2B%2FQWs2lCSut%2BB7HmUcw1wzo60gmGq0H0%2FiTcfB%2BIn3Pp95%2BI2kDEAKwiY8MObip1OUlKF5yfq7cRia6q3LSlQRZr%2F48fzpoaCpPGWxdQZouFT3jhB28Xs5VUEJWIF5EdBteT4Agw8vLhLZqlR9GR2%2F3vjnX3MAO1oNSC61gx%2FZvbb6DuwW0Bb0vidBvfLnwxj%2Brn2dmsezPbko%2FayqS6mf%2FWdeP%2BEJLkj5aL1k3sgMKTPITubir9YwNEMfFyd9gFYaedlL2p220W1oZw%3D%3D",
+      "size": 178297
+    },
+    {
+      "filename": "pajaro.jpg",
+      "success": true,
+      "path": "images/pajaro.jpg",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/images/pajaro.jpg?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=TvKZMndGZLh4S37Kfms3N0FHwNbrp6BMTjLTwz%2BDTXgL3oFbbaQpsjlyM2KlGGErQoA1rVembNjmk83Gx1jIwCLj1HZqfjQf1Fw4U1DJ4uFim7921hls8Z2F20fmBmpacIstkSGarkw9vnhKIx1IiwPTcnquFQGPm4%2FeJT9FOv%2BGj22p4KpqTsjfY75CJNWEd96qKV94PYQndrvcUYYrGn5%2FkWFh2e0xR2Cq%2FQMQy6VHQdrsrgGGFMP61tTPwMLiOqMYT13nL4%2FI3DFFKFcbbdj8yeRF7uBAdYAeZbsL94G04D4lakD86G5%2BK%2BCUbnot6E73y9aO1GSTJf7ohJDWIg%3D%3D",
+      "size": 203352
+    }
+  ],
+  "audio": [
+    {
+      "filename": "epinards.mp3",
+      "success": true,
+      "path": "audio/epinards.mp3",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/audio/epinards.mp3?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=bp0w%2ByhKPLmX3BLCu0w6x5D9XVJ1JwX47eeWobE4cNvsHNKnf2yUZaN21UCaonCgCE7%2BEdTqaCpThUrnYThuG7ZKbwdK3OT%2F7qxZR855mBP59wmegN7FWH4rAyacQJMNzDrIT97kVSZLIfilD658hHwhlpsypJ%2BLsmEBpaIRPa4HT384W48xKvk9xAgH5vGzTtRitXcm4l0Udx%2BWepjXP065%2BrhzmTRXrkBcPTyx3Nfuxv2qtjxg9i7d%2BnU0xmL8D0TLbPEdtmTz5Q%2Bpfr9%2ByduUsO3js59yPZjM89c6mpJxacbw6e9c9CiK2oi6Et%2Ff178%2FvrErUmOBufZujHkCQA%3D%3D",
+      "size": 1715757
+    },
+    {
+      "filename": "pajaro.mp3",
+      "success": true,
+      "path": "audio/pajaro.mp3",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/audio/pajaro.mp3?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=F2jHwWxWzQ4VsYeb4NshNG8HMHosEcMrmZiUC96b%2Bi1vjiupVOFBQkuOuX3ijvJAMwQOlwPx8IaMMXzNfWu%2Fr8jAczkCwkI%2BuihJC7U08hcv6Ghun4OV3tJUx3sKLwW165syr29qTsNvJj2PttG4dDWZ%2BxvgWQvf%2FdCjsBDdoFoCz48rdGlStDoceyR%2Fh3w%2BwymgHPD2SsaMViGfAtrabgJy5MPXObbe7tnIaPyD1S6R2ZyxedIo4LDmZPHxTR%2BzJH79LuuKmsq6uylkDp7uzicoBu28Pmbd5wpjrLhognXdIqgmS8TQk71oHpiMya%2BrvftT6j9M6BCKTTT4kQKDnw%3D%3D",
+      "size": 2330277
+    }
+  ]
+}

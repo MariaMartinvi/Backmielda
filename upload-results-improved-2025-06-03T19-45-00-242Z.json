@@ -1,0 +1,66 @@
+{
+  "stories": [
+    {
+      "filename": "california.txt",
+      "analysis": {
+        "title": "La Increíble Aventura de Pepo en California",
+        "protagonista": "Increíble",
+        "language": "spanish",
+        "wordCount": 555,
+        "hasDialogue": true,
+        "content": "La Increíble Aventura de Pepo en California\n\nUn buen día, Pepo, un pingüino con un peculiar sentido del humor y una inclinación por usar sombreros extravagantes, decidió que ya era hora de explorar el mundo más allá de su helado hogar en la Antártida. Con un pasaje de avión en su ala y un sombrero mexicano en su cabeza, Pepo partió hacia California, un lugar que había oído estaba lleno de sol y... ¡tacos!\n\nAl aterrizar en el aeropuerto, Pepo se encontró con su primer problema: ¡no sabía cómo usar las escaleras mecánicas! \"¡Esto parece una cinta para correr para perezosos!\" exclamó mientras daba un salto poco elegante que terminó con un revoltijo de plumas. Los pasajeros a su alrededor rieron, y Pepo, sin perder la compostura, se levantó y dijo: \"Solo estaba probando la gravedad. Parece que aún funciona\".\n\nUna vez en la ciudad, Pepo decidió que su primera parada sería la playa. Al llegar, quedó maravillado por el mar brillante y la arena caliente bajo sus patas. Pero pronto descubrió que caminar sobre la arena era como intentar patinar sobre mantequilla. \"¡Vaya! ¿Alguien puede apagar el horno de la arena? ¡Está ardiendo!\" gritó saltando de un pie al otro.\n\nJusto cuando pensaba que sus patas estarían cocidas como un par de huevos fritos, conoció a Lola, una gaviota con una risa contagiosa. \"¡Hola, pingüino viajero!\", saludó Lola, tratando de contener su risa. \"¿Necesitas un guía turístico?\"\n\nPepo, agradecido, aceptó la oferta. Juntos, exploraron la ciudad. Lola le mostró el muelle, donde Pepo se atiborró de churros hasta que su barriga parecía un balón de playa. Luego, decidieron probar suerte surfeando, pero Pepo no tenía ni idea de cómo mantener el equilibrio en una tabla.\n\n\"¡Pepo, parece que estás bailando una samba en lugar de surfear!\", gritó Lola desde la orilla, riendo a carcajadas. Pepo, decidido a impresionar, intentó hacer un giro espectacular, pero terminó catapultándose en el aire para aterrizar en un gran charco de agua. \"¡Y ahí va el campeón olímpico de clavados!\", narró Lola, animando a su amigo pingüino.\n\nDespués de un día lleno de incidentes cómicos, Pepo y Lola decidieron terminar su aventura en un restaurante mexicano. Pepo, emocionado por probar los famosos tacos, ordenó uno de cada tipo. \"¡Esto es como una fiesta de sabores en mi pico!\", exclamó mientras devoraba su plato. Sin embargo, un taco especialmente picante le hizo correr por agua como un cohete. \"¡Fuego en el pico! ¡Fuego en el pico!\", chillaba mientras Lola le pasaba un vaso de leche, riéndose tanto que tuvo que sujetarse las plumas.\n\nFinalmente, bajo el cielo estrellado de California, Pepo y Lola se sentaron en la playa compartiendo historias. \"Gracias, Lola\", dijo Pepo, ya más calmado, \"por mostrarme que el mundo es como un gran taco, lleno de sorpresas y un poco picante\".\n\n\"De nada, Pepo. Solo asegúrate de no confundir la salsa picante con el helado la próxima vez\", respondió Lola, guiñándole un ojo.\n\nY así, la increíble aventura de Pepo en California terminó con el pingüino agradecido por las risas, las nuevas amistades y, sobre todo, por haber aprendido que los viajes siempre son mejores con un buen sombrero y un amigo a su lado. Y quién sabe, quizá su próxima aventura sería en busca de la mejor pizza del mundo, o tal vez... ¡en la luna!"
+      },
+      "success": true,
+      "path": "stories/california.txt",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/stories/california.txt?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=MFCy87wHCVEfIorjIQzCbY0ZeiSzAtugxVNGLIReZGgC91qF8keRvF%2FwRHbBkSUYiSXaOwLM5n5hUbS7Czvvhd0EYLtjSNfWO%2F7hT0Rb2Mnn45NsXhUZJaa%2BequxnXgfgogC6K6OxcSGEplPGzxsBwAF6IJa0LJABuPwCsXpPbfUbJEh03eoNFa%2Bm%2BIt9bV%2F%2BHIlGoMNyLn62UbrvvSWQvo06fNNDMy0xyeinGN8DZ6n4Ao5lZIjCak%2FyTI7HNYV0tfZO9yF0Y2fWkupDQZalQpwqCNnd%2FN7GqY%2FkR6BHjaEhTqYW28DhezkNSi%2FyPkOuilS33qpbhOWfTHJOPOO7A%3D%3D",
+      "size": 3363
+    },
+    {
+      "filename": "playavoley.txt",
+      "analysis": {
+        "title": "El Torneo de Volley Playa con Zapatos de Payaso",
+        "protagonista": "Manuel",
+        "language": "spanish",
+        "wordCount": 543,
+        "hasDialogue": true,
+        "content": "El Torneo de Volley Playa con Zapatos de Payaso\n\nEn la pequeña ciudad de Mar de Arena, los veranos eran conocidos por sus extravagancias. Pero aquel año, el alcalde decidió organizar algo realmente especial: el primer Torneo de Volley Playa con Zapatos de Payaso. ¡Sí, leíste bien! Se trataba de jugar en la arena mientras llevabas puestos unos enormes y coloridos zapatos de payaso. Manuel, un chico de diez años, estaba decidido a participar.\n\nManuel era conocido por su entusiasmo desbordante y su risa contagiosa. Sin embargo, tenía un pequeño defecto: era increíblemente torpe. Si había una rama en el camino, Manuel la encontraría y tropezaría. Pero eso no lo detuvo. Con su mejor amigo, Lucas, formaron el equipo \"Los Descoordinados\". \n\nEl día del torneo, la playa estaba llena de risas y gritos. Manuel y Lucas, con sus enormes zapatos de colores chillones, caminaban con dificultad hacia la cancha. \"¡Cuidado con la pelota, que no es un globo!\", gritó la madre de Manuel desde las gradas, riendo a carcajadas.\n\nEl primer partido comenzó y Manuel, intentando saltar para rematar la pelota, se enredó con Lucas. Ambos cayeron al suelo en una nube de arena, causando una gran carcajada entre el público. \"¡Puntuación por estilo!\", gritó el narrador, un hombre con bigote que parecía haber salido de un circo.\n\nA pesar de la caída inicial, el juego continuó. El siguiente obstáculo llegó cuando una repentina ráfaga de viento sopló, haciendo que los zapatos de payaso actuaran como velas. Manuel y Lucas fueron arrastrados varios metros, rodando por la arena. \"¡Vamos, somos los reyes del viento!\", exclamó Lucas, mientras se levantaba, sacudiéndose la arena de la cara.\n\nEl segundo partido trajo una sorpresa inesperada: ¡el equipo rival, \"Los Equilibristas\", había aprendido a utilizar los zapatos a su favor! Con movimientos dignos de un ballet cómico, mantenían la pelota en el aire, mientras Manuel y Lucas apenas podían mantenerse de pie. \"¡Necesitamos una estrategia!\", dijo Manuel, mirando a Lucas con determinación.\n\nEntonces Manuel tuvo una idea brillante. \"¡Usaremos los zapatos como catapultas!\", propuso. Lucas lo miró, dudoso, pero la idea era tan absurda que tenía que funcionar. Unidos, colocaron la pelota en la punta del zapato de Manuel y con un movimiento rápido, la lanzaron por los aires. La pelota voló con un giro inesperado, aterrizando justo en la arena del equipo contrario. \"¡Punto para Los Descoordinados!\", anunció el árbitro.\n\nCon renovada confianza, Manuel y Lucas comenzaron a dominar la cancha. A pesar de varios tropezones y un par de caídas espectaculares, lograron llevarse la victoria en el último partido, gracias a su innovadora técnica de catapultas.\n\nAl final del torneo, mientras el sol se ponía sobre el mar, Manuel y Lucas fueron coronados campeones con coronas de algas y medallas hechas de conchas. \"¡Ganamos!\", gritó Manuel, alzando los brazos al cielo.\n\nEl alcalde les entregó el premio: un trofeo dorado en forma de zapato de payaso. \"¡Es el mejor trofeo del mundo!\", exclamó Lucas, mientras Manuel lo levantaba orgulloso.\n\nY así, con risas, arena y unos zapatos de payaso que contaban una historia, Manuel y su equipo demostraron que, con creatividad y un poco de torpeza, se puede lograr cualquier cosa. Incluso ganar un torneo de volley playa con los zapatos más ridículos del mundo."
+      },
+      "success": true,
+      "path": "stories/playavoley.txt",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/stories/playavoley.txt?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=hlkW%2FeyKyLftXiS7L41SWBPCcLjOQRXfe3UUaxLmsFw%2BkF9sIVOfoLg1nYUbn1GuQC8x9RNOvFHF%2BlGEa963JEdzbB04xVn%2BB7p5fJ%2BiJ18UlZeeuzoAg6ZAuVbc7whZ%2FIRrI3lfWnCawrd9ocoHyRRLxKCLDLprjus8%2Bx6%2FN5SXFUyYAr%2BzY5Ze4SCChCuxMFTa6Kz9qBlbpU%2Fk5bqwpccDrkOceS6yS2nwg5euVV%2FuuCQedgfaYCyWasqgLolc9BmQ%2BNqr9S%2FMjy1fk5byaEUZolBtQ01NKGBblWUcXrYzDpZuG9NlFIw9xfG44AtUmIZ4aAc5wVZu0vyldrLoHg%3D%3D",
+      "size": 3400
+    }
+  ],
+  "images": [
+    {
+      "filename": "california.jpg",
+      "success": true,
+      "path": "images/california.jpg",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/images/california.jpg?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=BVjPvVqmXHK3i32aRAU%2BIuoKten9useM4z77%2B2sqjG%2FZxS3NU0uAQffO9SD%2Byaur2Qj1ZPbyhG%2BZ6QNEm7uqVO9u7rPx2QueFa23QFPObDQx87RAagZwUIgpNCx8D%2F9g9cxxfPQwaj4rz0JMwhHvgEDPGXf%2BiZ6p0jb8%2FQ6OvDHGZthGj1%2FvStd3HZOcQvNXFRgJFIvqWVjHU%2BT6ZA3QSb3WBSWCJts5yQuQbvynmKU42fX1VNjSvi8lgL%2BJUrGS4fva7mDLoz8upXL2kA8ivJojdjE9B6hRiF7oXYmTU1RkzKYrSgt5%2F0S%2B7BBWpGUy7phDGUMKKBSfCrZasYFVNw%3D%3D",
+      "size": 158252
+    },
+    {
+      "filename": "playavoley.jpg",
+      "success": true,
+      "path": "images/playavoley.jpg",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/images/playavoley.jpg?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=C9xZ2BrR0x9nTqI8hEdkczXTwGrjs1%2F%2F8KUbfVYpHNLcutrfNY8QsoZZKPYL%2FXYze6QUTzTvfGkrtdGP8JMvcWnFYfFMKeom1YVg8YkzH2Ta6DDtp7DUKrGRT9eE4erkLQ9RzTQmexWGIvF5lRZ2foAQ66N4tE12aAJ8UOtjlao7UzLXCUbaif%2FqHgE4t%2BKgxoed%2BAUEL9eD67lg7iOFzvhp8u%2BZOYJF8B7v%2Fw5azZPGLgwgOg7IXWs7StY1kDKdCw2iniipVgDFjd%2BU9FaiKM3d4gTrT7EFyMVsrjsBdy9IfQkcwELOXpoYik9cwuNg9AS62zpo4zJ%2BjXz0L97t%2Fw%3D%3D",
+      "size": 186944
+    }
+  ],
+  "audio": [
+    {
+      "filename": "california.mp3",
+      "success": true,
+      "path": "audio/california.mp3",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/audio/california.mp3?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=E5qG4VxHScv%2BpeTF%2B5S%2BBRkH3eU3kvD154L2v9S7NQP3BWTb867blVVTKeHAJbRQ%2B6Ccg1Mv1Dn8t1SdgJjU38HnPZp9Qkyi69nAlQwfM5iMTq93kxmIfGzwe8iKcLaDVpHRWhRAzv0DKAC4q%2F0kOjeds9eR3GJixml3IFdohvnqoqlFtDfhrLMilldk6yxzzIre5RzYSN8JUffgP60%2BIah%2B6JRGhfmU%2BzR%2FB5uW5sLLRwCiqaYvq923i0E67uWZERhWUarxQXdKOZc7EaF3cPFFF78AN3q%2FW1Gsja60DDI6%2BzJNXKBZFbosFYD4m2EG3d15n%2BFxR8lnGjKvG8ojHg%3D%3D",
+      "size": 2201564
+    },
+    {
+      "filename": "playavoley.mp3",
+      "success": true,
+      "path": "audio/playavoley.mp3",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/audio/playavoley.mp3?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=KYkIwSzddRHsQx8DewAHjRT7u41HB9KuuIiu1HcciEdQd72gnuCYZY5ZZPAlZZHZ2xnT%2B6DQeBP1yfVuDz0dHBz9z5AriPZhljUFCty1TAHVfKMnqdyjwRPcokGmbL9ME79G8g6aHzWtzjRgd9duBSmchl8adJVev0WN5BFc6axCdGjlhXjdS0qBtqZn2VMH%2FmCS7D1Xl0M49RgwPoSYHMRfVaJJOzwQmN4XcV5iud1nuJdRLwcFaDTdlBA7Xga%2BjuO43tb3dymjdSTILwePSd1ZDWE6hMjoTYFewcmCv1wMCf5heikorb1oEnWd3vC7CUd3PTWPDUYT1zNL1hitSw%3D%3D",
+      "size": 2323652
+    }
+  ]
+}

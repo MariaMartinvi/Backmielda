@@ -1,0 +1,29 @@
+{
+  "stories": [
+    {
+      "filename": "drakoniano.txt",
+      "success": true,
+      "path": "stories/drakoniano.txt",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/stories/drakoniano.txt?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=RLVP%2FnYkVDvf4NwtjsH985chcZkC92DJZod5IOkHYVOep6l7aTsJ3FIjxOBiVKEEYDLupJjU04O4uUElHa5DI8dJlZaVpKsnd%2FsUCSHR6q12FTm4AdtBi1NRETwng9CnaIURcPj8ysmGA6D1D3NZdeCsmu8nzMYjUstq7aLsshIaG7661sV8Fe%2FJw2D2IVCVlu7Xx%2BGhQ9U58BsnZYLd%2BEoK3CdlX3ozyejX8Bo%2Fa327IVBnw5p9NDe5KXin7AkW0BBEVSO4AmxyLo2j6nQTdwPhTMakzplliKhdOzImx0J2PpSLDn1AAzfQnTxaU%2FHLT682Cho3zJBUJjUjoI6MSA%3D%3D",
+      "size": 3038
+    }
+  ],
+  "images": [
+    {
+      "filename": "drakoniano.jpg",
+      "success": true,
+      "path": "images/drakoniano.jpg",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/images/drakoniano.jpg?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=xSiBVy2%2BqjnrnvNekRL4suPFpseCbtlmYPkzjKsui24ORWKKNCgTkCdCL57j7OIjMp14pBur7QQPMrur%2FTZ07YnLH54N9njL46E%2FK62l0CmLJMmg0J3hi0JYvyEA%2BQ7BR4b2Q1ToKFMEAnBIYCxNKknU83%2FgvLmyZRKPrPw89ja5UXbYuKkosyaHfjWdtKr%2FeJKju7d5uBelkcwHsddH3D300S9KTbrI%2F3G%2FSxtZt1WTh0tNwYSGQeeo%2BjogUEPQ1IBm%2B5ab5ZUw9NLx5Q7Re1tzZLqluOZmdX%2FeaN8xENJW%2BcgaWHQ31eIfYKk61N%2B75flAV6m2ht2TcT%2BZ8woQhA%3D%3D",
+      "size": 270634
+    }
+  ],
+  "audio": [
+    {
+      "filename": "drakoniano.mp3",
+      "success": true,
+      "path": "audio/drakoniano.mp3",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/audio/drakoniano.mp3?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=wl%2FXOFszBtt88oQm5SjUSQidtOy6cukIoPacH3b%2BkGkToUzh7a7oREYOhqJ51iQuQsitRGQ%2BbRmWVsQGkeldzfWMocdjnfkL4db9xgm66Wt3eOOim4U8opRE50hFVV%2Bxz6rdM1oamn8WlhU5zO%2B5ztXYF7FM4FUjqoXQkXcHQqcYzY0UirUYLEf8G4hglugPINrKKW7ZE7DhawxF4pJYlh5753y4F9bJ7R8eRqroTwcAnLbU9rQphxf5QsWwm7nx004eXBuhxha70sUteerl1FFtRSupJG90FhG8G%2FpHvPtifuEeFH2KyedUZN6sTGh4DSHOgO1%2BqbxORvedIpkTFA%3D%3D",
+      "size": 2298261
+    }
+  ]
+}

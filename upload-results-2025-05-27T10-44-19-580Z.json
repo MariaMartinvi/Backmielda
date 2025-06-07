@@ -1,0 +1,120 @@
+{
+  "stories": [
+    {
+      "filename": "claus.txt",
+      "success": true,
+      "path": "stories/claus.txt",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/stories/claus.txt?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=KLTVyl2g0H2M36uSVyBwkOapIIbfZGq6FQ58PtGlNGLSu3ymRLQpWv%2BpzZlD7FLNBkTnC1hQujsyenKBtQ%2Bb10fm5a4hKcSTNVgaQUe14EatBPWiZG80MsOis1f7vg%2Bs2mwsCTVLkRrFL7ys%2B2bw4c5hfU6kfWcIzE4DxcCOSko4PqxpFSxdlpZmoA%2FU0w3zFoWoxp6f7d%2BoHuKRr8ro3wzZxkhC3E00yxstb1R9bzuO%2Biki%2BuLOMUSi2ZHXYWRdgCzwJnS7K0BoHSd03DdHSoPO3tVhLv%2BdR4V%2ByR4362KDEoQMzm0QO3T7dMXYDcWdadV8U%2FU9WcmKheEuPgm2xw%3D%3D",
+      "size": 2637
+    },
+    {
+      "filename": "gracia.txt",
+      "success": true,
+      "path": "stories/gracia.txt",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/stories/gracia.txt?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=OYoVvlG2PQcBoI%2FeYd%2Fl7ASuQb5LLu%2FWbFuMJ80NFol2NBsB9aVbg5OQYN5Xztzpihxqsmwveh%2Fcfwb1UUmWf3iQ0HVvZO%2FQ0CNf3JInxigMRczqXTD5iTVqz19JtquQ61MVbxLMD3MBkvOIpAmbOku5FmH3hxl353F%2Fb6fxmEZG9bfQRUAqBATZVfOoNN7MKksWCGYaMCy2fJe%2F93RdybGkdfJRwTbXqszSdXFFiIimXfPzZq%2FTwVC1k2K2udrvcFoRW7SrOXkdEEneYuSvqowaEvvuFvyHUUqqQ2kCcon57GDwfLUZZYELQ4gTUDNSKKtSsOg4jZeiiHui2C0dSQ%3D%3D",
+      "size": 2459
+    },
+    {
+      "filename": "mejillones.txt",
+      "success": true,
+      "path": "stories/mejillones.txt",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/stories/mejillones.txt?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=d8SwjREcsxfM5MPbrHlmTgHXJZyVGCft04BUvUpDyCg%2FxY8QQjpj6%2F1frH16vR0jwSLTOSdQrMi%2BDBagxE8ct7Dw0E4At%2FaVB08q1Inw%2FyiaeVnzUz5xBFV5rT8wRDp5%2FYxFn4sCmTa2JJ7%2FGbR2rAkQw61%2Fy%2BdZwTjeV3yuhDtUIs9aeOg9rjsWpoYLfFq25TeW9QaKAftCgTowMhYKA3g1eY%2B%2BOXrw4W7R71BrseS%2FISWRRkURpbUhSmeKkl7ZA3zfMWzo3sTkp1sWTUaIktVjOhcpF48rrORZr6BJuWVzP3xmhwJu8ETOYROb0o2i8nbd0blPcl%2FZY%2Fv0BCvoCw%3D%3D",
+      "size": 2303
+    },
+    {
+      "filename": "noel.txt",
+      "success": true,
+      "path": "stories/noel.txt",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/stories/noel.txt?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=Dxjci37XHfm4eLUwXXSbpx9eJHSfXtGcztZ9hHGUmhS45TwnrqQHTHmXceJDvJ9u9Bi4M2yPfQ8uPAv%2FDaZY9cmA2THi8tRDyrO0PDlQBDI0uxECP9CAHLwV9KD5MWe0SrmOZVAX%2FEDx9G5ODsSPDyqGPM7KWfyHJlDVlpGHSVWwMmv%2FZddQtr735jokNCaCRH9nlnzqLz%2FfGr0abbEyRnNGaewJKHIG%2BSDeQ3CZkCsjNWwCn65MQd%2FhktSthU9yuU6Ey20inmDHuh4YhUAybVNCWYDVAQ7l63Zd%2FQybBCqzmanFc2R6XoQVBJA43t9jilTKHRdQ3jif4%2Bt2ZCvXrw%3D%3D",
+      "size": 2507
+    },
+    {
+      "filename": "pizza.txt",
+      "success": true,
+      "path": "stories/pizza.txt",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/stories/pizza.txt?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=39MLQhTBd9qtGML7kHVHmcritNEBKCWqJqRV81yDKzCHY8It9Bv7lUiNY2c1%2B8HGi%2FT%2BkrN%2FReLqd90h2Rz2M5dnNe%2FJpS58KgJHbwFVIA5ZFty1ouJkuEMLX1q05neBqVVUaZoO%2ByyRVHwK1R98yq%2BsRUrlGqC2CXlurIdD8D0qAu5YIO82U8cfWOWdDaYd96Q36nWBt3IG%2FHQINP%2BaAPESTccOqC4RNOWiqudMSS57LbflYDgC3%2BuhKAfipa8MdVfOPu9fpji9dOcdGDsc%2BEuDBsuY1UTzX%2F5RGS4f4fQAIiKPczoWLNxTfBncC%2BGBdLeiVUk4y%2FhtdjBrPffizQ%3D%3D",
+      "size": 2085
+    },
+    {
+      "filename": "setas.txt",
+      "success": true,
+      "path": "stories/setas.txt",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/stories/setas.txt?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=2kPxa9YfHLGmsYN9xPugLy8PvLZwkXAyVAN%2BIyyBNrUFUDPLAIpHQSNoATyL6smWFBXCJdgirdyX%2Br0BluzUQ%2Fy5gGzHQV6e9GBj0LTkQGznD%2BXuxGmUQT5iugudLAaHkXsRQ%2Fkr%2BYCr5j9vlJistJGJB35yEWHRF3y76gXCRY3G8z0gyQA9Nn%2BYKUntiYJq6l0iwwvt5LP6peY%2BVBM7Aurg5HxKoMLPrzDIs0Nuu4O5Rs%2BaGyhXFgv7bFoOoHTmYDnjnIjOTu0%2FHM0G%2FAe%2B4tMWfL9%2FsMfk37Z2Qu3C4XvcPvykv9JrCAXithrDPfgZ3toTWj9Uc4ZEs0917XdwyA%3D%3D",
+      "size": 1333
+    }
+  ],
+  "images": [
+    {
+      "filename": "gracia.jpg",
+      "success": true,
+      "path": "images/gracia.jpg",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/images/gracia.jpg?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=QRs6av1H%2F5zEOrAgjBh8nOSw5E2Aye366eS5Q0ROyawwRbJFiWP2a7a7UIy88RwfYCWPR4m6bEA7JpY%2FO19oi%2F8c57oZZhvetvsvS%2FvB89tJQENgKLdzaZsupjjnNmjS3Dn1yDDCp%2FULjB0ScOwZZrahqyBfvJIp%2BZ%2FIv0Z%2BHoOv4aYrQl0t4gLbE9jzYXshpigBJpnUzF9vHxJQ5uJSut7byUUC%2FkhlbDYoHuiI45ll463Xi5yqDZIL6VpGe5THR3%2BBUpwv213mAY1wTGC98CvKD0o1LsY9igpLMy2VaczbPsj5T%2BvHn9rxGqG8afJuuZ7rNIwXlfYfpa1PUiZ%2FqQ%3D%3D",
+      "size": 226673
+    },
+    {
+      "filename": "noel.jpg",
+      "success": true,
+      "path": "images/noel.jpg",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/images/noel.jpg?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=ZZQ6mzCEtndcwioN8BfcoXxgM5enJRGZICcJ9d4x5iuXmvQRWfEFpXfldRZzLOY4jEXZp1Iw7tvITnVb9RuuwcDJMvA9k8j6VMSuwW5CVWhMDdfuqfV%2FJ5nShXyzrfszxRHMwXkG62aerAhpwWItKwzz6iQUKUpRtgpmXNK3sqbY3eRixHCkFAv08l3XTV3QwvPdjaLpAJ9%2BvFnHUuP8EqbpV%2Bf1XWhUhDbbTuebaEsTxtW60sGYSu2wrfYkaw1lP1K0xcw7F%2BMosY0W6Z7qV6yObFBWqYP%2BvHRMmrXwuFAeI8vxTsGw%2BiFVzs7YqsLdzKxR38nEK6MsPPI6d4Cijg%3D%3D",
+      "size": 236434
+    },
+    {
+      "filename": "pizza.jpg",
+      "success": true,
+      "path": "images/pizza.jpg",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/images/pizza.jpg?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=F9gjNif2HSOsuwVNlXsQDlK%2Bay%2FPcXMCw4LZVPsUKvB%2FbrE5a6dDvspmNy354GTGlfq8cwIcTsyNR6HWvNXSO1ptjanWNV%2F3LBo7Ceb18qZg41FKS53Oo6VHMJlKxeJjVzbND8jdhUAE7Jo080%2B%2FGemN%2FBZNhotJ8lGazrh4r3ATbKp%2FSZgEb9wDyg7QHZXKj3FZUYFGZgraBlfx6LC97RsrVlxdMxF2UVTDzJOceMPFBCcGTaqb7leZHb0%2FTmFRi50UN4kzuKrdqo09RfqYgIoPGYNQHW8Y6vANtYdqM4iF2mb5jkC2GSaLgA4Q0%2FcBXinyipCQge7yjhWixvQ8Pg%3D%3D",
+      "size": 169446
+    },
+    {
+      "filename": "setas.jpg",
+      "success": true,
+      "path": "images/setas.jpg",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/images/setas.jpg?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=UO7gDJ1kUSth%2Fp7UsYse1igzltFVK3KdkDyJESitibb3pP99RnquioicHl9MOeE2Hqbf1mwBj8m3JLgSsz%2B19iSCd6lE7peFrJaxu3C8zlXP56m%2FLJfGvBtiZd3kX%2BtfU3ow8qbvwZZs7XlvQ%2Fp00wuOTOtAsDoxRVtilM68tPUBp9JN2qV5hpcpMUCug1JZNHGg72JkIH5lpqtWiGqa24p45UxbT0eDdTfUHB5s7BP2HQCiECXAaLRicsNp1MHnJeFUbGjmDly2OKHO7jgu8RL1gFNtLR8Z7d1AzaM6FuffqVUWp3N0HcxXMxugJRbllJrkMYxSeoikrvSrkbQBFQ%3D%3D",
+      "size": 308419
+    }
+  ],
+  "audio": [
+    {
+      "filename": "claus.mp3",
+      "success": true,
+      "path": "audio/claus.mp3",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/audio/claus.mp3?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=3hr51yHysCcHWiSGfVldXTAeXfNZT7ZOpaspfAR5mtekXZhpSy7Wn09M3eCrkK3Araf7%2Bxfb8j2Fj9diyMPFH0jZE9k6kIE6OZK%2FH6GK8LspzUNB8NxiweSFk4bd88GBV7z%2FMe3EndlLgNLHqIIIJsoPXAC2L5jpBWjB4e3bDvhmT%2F9KI%2FBrKXJWNzJR6K77UMYqw6HXBnZvxI08iSBJkm7rz7%2FX64suFsIh83NHO6AX5DAFgxcGg8jB0use3e8fsVfcLOvNRXSltR09Pp54r9gfJJcdkov60YH9Vl9gE5kDrrvlDsw1hUDYTlCR9ALB8DY3x7AsNiPvUCXHRwyjMg%3D%3D",
+      "size": 1266816
+    },
+    {
+      "filename": "gracia.mp3",
+      "success": true,
+      "path": "audio/gracia.mp3",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/audio/gracia.mp3?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=pn%2BG2ADON%2BdOZteACskc7aO0U4bJXyT1ZN2ooKy8wgfdunDL8epVU%2BgH1Vs7TtSNYv8sNKec9nih8Y%2BVIMGnXwnG5e7CPOM6ABx9Ga7ou08ZCMTkKNxnHtcLM6LrVYc8yBSDKd%2FTzbF6EjdSL48mu0KEroBTHXoUWrzyC8JS5esti1U8f31AKqnBjcVdsSAjyg9jkoT7PAfUcjxwm4GTvckFIlB550MUEFJGmvDEFH1pH%2FA38cEyLcJU6lefJODaCa4pMd5pzt3lri%2Btr6K4G8irSNh0f%2FdFjdoAOvfQubw9oUp8CNHYCnXdaq3xven17E2R6J6po636U6E6v%2Ft1Mg%3D%3D",
+      "size": 1262133
+    },
+    {
+      "filename": "mejillones.mp3",
+      "success": true,
+      "path": "audio/mejillones.mp3",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/audio/mejillones.mp3?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=vMAt9g8pWxs0mqpxc3Qmka1jltpEpk3fvb555hc3r44C8oOaPCAVZ9D0GXJ1rtUw6ccJ92eRncdQT0cXwF8Ev3kNbfWS%2FlC6bgo%2BJU1AhR9OUGhgMjAWcXKUkDFU1PuqiUU5rk2yFa7hPNzjmIfPx4vwI32lNZIDbq9B9TDBTbWjNz1ahmrgMuyADYnao83MMFgF0AroVVHuz4yIy3ozMaqhr8eV8WXhaU2pTNvk3UD%2BM%2BchcPHUIyeo8Y5eKzlEPCqa644prQVGhIw4G6tOZOq%2BLufAGC7KGBrDMyCZncrIJdidBpVGcBZwc12k9h1ZBhkIOj%2BHUbP0zHzLTkqLbA%3D%3D",
+      "size": 1261845
+    },
+    {
+      "filename": "noel.mp3",
+      "success": true,
+      "path": "audio/noel.mp3",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/audio/noel.mp3?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=d7Zl%2FiWbl%2FoiX5YH9unEQPH4EiMRTpIhHaZzEl26XW2yeWwlxLMmfbKpwEkVcp%2FI1MCstvKmkBaIlmVjKj%2FaxJRI5VKWVf3h3p1VQYUgt5%2FmmUYak8msR9fnftIsELWcnJ153rPpSJfEHMLBEq%2F2LbZi25Eq04yZIGAQffEHEdScUVo%2FF5%2BjUu%2B5po9gNNnhk50fI%2FpVMPc2%2BTUMo2%2FnRzqN9uIM3KSs0rWY3HQJD1DzwDIJIw37FFpVX%2FiQcFA5LlGy3esBxAJKkiCtvk5XhP3zFmmydLJ4sb8KMEAwyyA9dJCl1h0xsFmR7Gq%2FzHCOGUovj8k4NBCehJBR703BUw%3D%3D",
+      "size": 1231797
+    },
+    {
+      "filename": "pizza.mp3",
+      "success": true,
+      "path": "audio/pizza.mp3",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/audio/pizza.mp3?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=WvlyHwQGREPxDwGyISRHFKwu5kFXhDHvleSOYFdfczzHeypdxnoDCtVU42DSetSo00vABzA%2FmwIqAIqDnidWRDSIU0eXnlVrK3t2eAxdqChtdQ5BiG5vawEcF7uQ5qxcFcIsHChdmlwCyVSSnjqMCO8iaOVOpqdhFwhurPOpL2BQfaTiW131QPHRp5BCLCptONbTBoc36sw8PNIHCiq9bKB2HbbfQ0ca2PfSAaQZOPJt7Pcu4Oz0lDyfBPKM6N%2FFIsM%2B56jWFZUmBawoT%2FZNSLKCbC3l3qzVysA7aOlEtbwa3cAXds0MsduyvHDrPskBUrPCjaoeFuB%2BjlrSv7hfgg%3D%3D",
+      "size": 1469853
+    },
+    {
+      "filename": "setas.mp3",
+      "success": true,
+      "path": "audio/setas.mp3",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/audio/setas.mp3?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=bjZxacsYXPcBXhjipTGiEGV4CXyD%2BpwCnZ3QrG4xwgDKAxVWTdOo7U8hjriOpl1y35K8LesCxejZ%2FMTg65c93S75GoHKjJV1EfHu6PQHDvI%2BOIXAtYBVc6otN1CMjfuHLMpOvka1K%2BSO8tB8X0LaqDYe%2BlIb%2BFYXIwjI8r824AbArbH8%2FXos08hDH1C3g2VV8YMFVXj4phtCW6llwCcG3K8%2FbE%2B%2B4jcx87brJTwq912YzDHNOcESToOTUT9jhz2uFdek%2FsvDazPrlx4VvyvbOfhG0YZXhqSnnQQl3VyuMnyyMnoQmAdDGP3rWrc5joGvu786AFnIUSPiqb%2BYlT4ovQ%3D%3D",
+      "size": 765885
+    }
+  ]
+}

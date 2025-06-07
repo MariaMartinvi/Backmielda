@@ -1,0 +1,25 @@
+/* Diagnostic tools styles */
+.diagnostic-tools {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+}
+
+.diagnostic-results {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.diagnostic-code {
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: pre-wrap;
+} 

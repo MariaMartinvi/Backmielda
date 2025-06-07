@@ -1,0 +1,50 @@
+{
+  "stories": [
+    {
+      "filename": "claus.txt",
+      "success": true,
+      "path": "stories/claus.txt",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/stories/claus.txt?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=KLTVyl2g0H2M36uSVyBwkOapIIbfZGq6FQ58PtGlNGLSu3ymRLQpWv%2BpzZlD7FLNBkTnC1hQujsyenKBtQ%2Bb10fm5a4hKcSTNVgaQUe14EatBPWiZG80MsOis1f7vg%2Bs2mwsCTVLkRrFL7ys%2B2bw4c5hfU6kfWcIzE4DxcCOSko4PqxpFSxdlpZmoA%2FU0w3zFoWoxp6f7d%2BoHuKRr8ro3wzZxkhC3E00yxstb1R9bzuO%2Biki%2BuLOMUSi2ZHXYWRdgCzwJnS7K0BoHSd03DdHSoPO3tVhLv%2BdR4V%2ByR4362KDEoQMzm0QO3T7dMXYDcWdadV8U%2FU9WcmKheEuPgm2xw%3D%3D",
+      "size": 2637
+    },
+    {
+      "filename": "mejillones.txt",
+      "success": true,
+      "path": "stories/mejillones.txt",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/stories/mejillones.txt?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=d8SwjREcsxfM5MPbrHlmTgHXJZyVGCft04BUvUpDyCg%2FxY8QQjpj6%2F1frH16vR0jwSLTOSdQrMi%2BDBagxE8ct7Dw0E4At%2FaVB08q1Inw%2FyiaeVnzUz5xBFV5rT8wRDp5%2FYxFn4sCmTa2JJ7%2FGbR2rAkQw61%2Fy%2BdZwTjeV3yuhDtUIs9aeOg9rjsWpoYLfFq25TeW9QaKAftCgTowMhYKA3g1eY%2B%2BOXrw4W7R71BrseS%2FISWRRkURpbUhSmeKkl7ZA3zfMWzo3sTkp1sWTUaIktVjOhcpF48rrORZr6BJuWVzP3xmhwJu8ETOYROb0o2i8nbd0blPcl%2FZY%2Fv0BCvoCw%3D%3D",
+      "size": 2303
+    }
+  ],
+  "images": [
+    {
+      "filename": "klaus.jpg",
+      "success": true,
+      "path": "images/klaus.jpg",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/images/klaus.jpg?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=gcKO9pzMzYYTE7E4fU2oj2Thwd%2B2XxrjUjovwjIVz8%2B1pNpan8Tfb1gjZz6FhvtaVeaCZwcAbvjnu77nmA9lVnhxQr5qIkvxbpJAwond%2FnWeuwRWjbBQq0gdgjQYkP2NoKvgxL9b%2F8ZcUaNhyNVyEi4YOS0GvjoAgcbre08nCdZZASQLXhP9v%2FkTuelYrJS9twm%2FUwon4WDhGmQ8q3VahJVUgxCr4LmAjdHt5M%2FRiQjMy%2Frb5pqa4bUeshVAZj%2F39Ef7anAtWsVl2%2FHZAo8kiDwxhVWP19%2B0i2TGFRgglYsG369fBtb5sn0dcofneq3XXgqLtGhUq%2F%2ByYkfFTjcvQg%3D%3D",
+      "size": 895076
+    },
+    {
+      "filename": "mejillones.jpg",
+      "success": true,
+      "path": "images/mejillones.jpg",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/images/mejillones.jpg?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=08QH%2BoDjQyYZ5K9traXxLiMAZUUdVulb2pXGeiGo6FoVpwr70bX3SYJeTkjRH4ydd4%2BLKsuzeqIiB4BYMIwat7poq1w95%2B6moX40LmvU%2BAcABTSMTePpqEbgKbH%2BXO557scgJ%2FApuRT0ByFdP69Is9%2ByT01MzrAdntxZ7r2BOZ690eor7dlmmQDkzHzGTN0ztbGy82hVUtq9VZRpJVegvaUcF7t9YnmmXlpbTdk73aUB01nWyt7WOVtoTaIMrpb2HfEY1Zm8UYLv6KZ%2FDD4M%2F11AoObZO%2BtA5w9ZDTr04ISbLeAmiYsZKL5wEii7NGGEM9MfFiFxdCDFkyrkf3vH0w%3D%3D",
+      "size": 947888
+    }
+  ],
+  "audio": [
+    {
+      "filename": "claus.mp3",
+      "success": true,
+      "path": "audio/claus.mp3",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/audio/claus.mp3?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=3hr51yHysCcHWiSGfVldXTAeXfNZT7ZOpaspfAR5mtekXZhpSy7Wn09M3eCrkK3Araf7%2Bxfb8j2Fj9diyMPFH0jZE9k6kIE6OZK%2FH6GK8LspzUNB8NxiweSFk4bd88GBV7z%2FMe3EndlLgNLHqIIIJsoPXAC2L5jpBWjB4e3bDvhmT%2F9KI%2FBrKXJWNzJR6K77UMYqw6HXBnZvxI08iSBJkm7rz7%2FX64suFsIh83NHO6AX5DAFgxcGg8jB0use3e8fsVfcLOvNRXSltR09Pp54r9gfJJcdkov60YH9Vl9gE5kDrrvlDsw1hUDYTlCR9ALB8DY3x7AsNiPvUCXHRwyjMg%3D%3D",
+      "size": 1266816
+    },
+    {
+      "filename": "mejillones.mp3",
+      "success": true,
+      "path": "audio/mejillones.mp3",
+      "url": "https://storage.googleapis.com/cuentacuentos-b2e64.firebasestorage.app/audio/mejillones.mp3?GoogleAccessId=firebase-adminsdk-fbsvc%40cuentacuentos-b2e64.iam.gserviceaccount.com&Expires=16730319600&Signature=vMAt9g8pWxs0mqpxc3Qmka1jltpEpk3fvb555hc3r44C8oOaPCAVZ9D0GXJ1rtUw6ccJ92eRncdQT0cXwF8Ev3kNbfWS%2FlC6bgo%2BJU1AhR9OUGhgMjAWcXKUkDFU1PuqiUU5rk2yFa7hPNzjmIfPx4vwI32lNZIDbq9B9TDBTbWjNz1ahmrgMuyADYnao83MMFgF0AroVVHuz4yIy3ozMaqhr8eV8WXhaU2pTNvk3UD%2BM%2BchcPHUIyeo8Y5eKzlEPCqa644prQVGhIw4G6tOZOq%2BLufAGC7KGBrDMyCZncrIJdidBpVGcBZwc12k9h1ZBhkIOj%2BHUbP0zHzLTkqLbA%3D%3D",
+      "size": 1261845
+    }
+  ]
+}
